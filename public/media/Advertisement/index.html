@@ -1,0 +1,1 @@
+<!doctype html><html lang="en"><head><meta charset="UTF-8"><title>SAMAKAL | GET THE LATEST ONLINE BANGLA NEWS</title><meta http-equiv="refresh" content="0;https://www.samakal.com/"><script language="javascript">window.location="https://www.samakal.com/";</script></head><body></body></html>
