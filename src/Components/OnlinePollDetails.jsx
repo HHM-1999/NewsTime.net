@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 import DocumentTitle from 'react-document-title'
 import { scrollTop } from './AllFunctions'
 import { toBengaliNumber } from 'bengali-number'
-import LeadLatestNews from './HomeContent/LeadLatestNews'
+import LeadLatestNews from './HomeContent/LeadNews'
 
 export default function OnlinePollDetails() {
     const [pollResult, setPollResult] = useState([])

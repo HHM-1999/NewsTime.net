@@ -6,7 +6,7 @@ import { scrollTop, ForLazyLoaderImg } from '../AllFunctions'
 import DivisionDistricName from './DivisionDistricName';
 import ErrorPage from '../ErrorPage';
 // import LatestPopularNews from '../Category/LatestPopularNews';
-import LeadLatestNews from '../HomeContent/LeadLatestNews';
+import LeadLatestNews from '../HomeContent/LeadNews';
 // import RLoader from '../RLoader';
 // import RLoader from '../RLoader';
 var lazyloaded = false

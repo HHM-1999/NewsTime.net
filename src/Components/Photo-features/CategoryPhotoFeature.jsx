@@ -4,7 +4,7 @@ import axios from 'axios'
 import DocumentTitle from "react-document-title";
 import { scrollTop, ForLazyLoaderImg } from '../AllFunctions'
 // import LatestPopularNews from '../Category/LatestPopularNews';
-import LeadLatestNews from '../HomeContent/LeadLatestNews';
+import LeadLatestNews from '../HomeContent/LeadNews';
 // import RLoader from '../RLoader';
 // import RLoader from '../RLoader';
 

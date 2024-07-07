@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 import { scrollTop } from './AllFunctions'
 import DocumentTitle from 'react-document-title'
 // import LatestPopularNews from './Category/LatestPopularNews'
-import LeadLatestNews from './HomeContent/LeadLatestNews'
+import LeadLatestNews from './HomeContent/LeadNews'
 // import RLoader from './RLoader'
 export default function Live() {
     const [state, setState] = useState([])

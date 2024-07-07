@@ -9,7 +9,7 @@ import CategoryPopular from './CategoryPopular';
 import ErrorPage from '../ErrorPage';
 import DivisionDistricName from '../Country/DivisionDistricName';
 import CatLdJson from './CatLdJson';
-import LeadLatestNews from '../HomeContent/LeadLatestNews';
+import LeadLatestNews from '../HomeContent/LeadNews';
 // import RLoader from '../RLoader';
 // import RLoader from '../RLoader';
 

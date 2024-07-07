@@ -6,7 +6,7 @@ import { EmailIcon, FacebookIcon, LinkedinIcon, TwitterIcon, WhatsappIcon } from
 import DocumentTitle from 'react-document-title';
 import { scrollTop, ForLazyLoaderImg } from '../AllFunctions'
 import ErrorPage from '../ErrorPage';
-import LeadLatestNews from '../HomeContent/LeadLatestNews';
+import LeadLatestNews from '../HomeContent/LeadNews';
 // import Profile from '../../../src/assets/media/common/profile.png'
 
 var lazyloaded = false

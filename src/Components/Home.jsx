@@ -1,5 +1,6 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import LeadNewsSection from './HomeContent/LeadNewsSection'
+import { ForLazyLoaderImg } from './AllFunctions'
 import Sports from './HomeContent/Sports'
 import { Link } from 'react-router-dom'
 import DocumentTitle from 'react-document-title'
@@ -28,304 +29,106 @@ import PrayerTime from './HomeContent/PrayerTime'
 // import Event from './HomeContent/Event'
 import HomeLdJson from './HomeContent/HomeLdJson'
 import FBpagePlugin from './FBpagePlugin'
-// import Ramadan from './HomeContent/Ramadan'
-// import LazyLoaderGIF from '../icon/lazyComponentLoaderGIF.gif'
-// import RLoader from './RLoader'
+import LazyLoaderGIF from '../assets/media/common/loading.gif'
+import BDSection from './HomeContent/BDSection'
+import NewsTimeSpecial from './HomeContent/NewsTimeSpecial'
 
-// var allComponentsLoaded = false
+
+var allComponentsLoaded = false
 export default function Home() {
-    // useEffect(() => {
-    //     document.querySelectorAll('link[rel="canonical"]')[0].setAttribute('href', window.location.href)
-    //     const timer = setTimeout(() => { window.location.reload(1); }, 300000);
-    //     return () => clearTimeout(timer);
-    // }, [])
-    // const [isLoading, setisLoading] = useState(true)
-    // const [homeAd2, setHomeAd2] = useState([]) // eslint-disable-line no-unused-vars
+    useEffect(() => {
+        document.querySelectorAll('link[rel="canonical"]')[0].setAttribute('href', window.location.href)
+        const timer = setTimeout(() => { window.location.reload(1); }, 300000);
+        return () => clearTimeout(timer);
+    }, [])
+    const [isLoading, setisLoading] = useState(true)
+    const [homeAd2, setHomeAd2] = useState([]) // eslint-disable-line no-unused-vars
 
-    // const [firstSection, setFirstSection] = useState(false)
-    // const [secondSection, setSecondSection] = useState(false)
-    // const [thirdSection, setThirdSection] = useState(false)
-    // const [fourthSection, setFourthSection] = useState(false)
+    const [firstSection, setFirstSection] = useState(false)
+    const [secondSection, setSecondSection] = useState(false)
+    const [thirdSection, setThirdSection] = useState(false)
+    const [fourthSection, setFourthSection] = useState(false)
     useEffect(() => {
         document.querySelectorAll('link[rel="canonical"]')[0].setAttribute('href', window.location.href)
         setTimeout(() => { window.location.reload(1); }, 300000);
-        // setisLoading(true)
-        // setTimeout(() => { setisLoading(false) }, 300);
-        // setisLoading(true)
-        // setTimeout(() => { setisLoading(false) }, 300);
+        setisLoading(true)
+        setTimeout(() => { setisLoading(false) }, 300);
+        setisLoading(true)
+        setTimeout(() => { setisLoading(false) }, 300);
 
-        // allComponentsLoaded = true
+        allComponentsLoaded = true
 
     }, [])
     return (
         <>
             <main>
                 {/* <Event /> */}
-            
-                    <>
 
-                        <DocumentTitle title='TheNews24 || দ্য নিউজ ২৪' />
-                        <HomeLdJson />
+                <>
+
+                    <DocumentTitle title='NewsTime.net :: নিউজটাইম ডটনেট' />
+                    <HomeLdJson />
+                    <div className="FirstSectioComponent">
                         <section className='container'>
-                            <LeadNewsSection />
-                        </section>
-                        <>
-                        <Ads   />
-                        </>
-                        <>
-                            <div className="videoSection ">
-                                <VideoSec />
-                            </div>
-
-
-
-                            <section>
-                                <div className="container">
-                                    <div className="row">
-                                        <div className="col-lg-9 col-12">
-                                            <DCountry />
-                                        </div>
-                                        <div className="col-lg-3 col-md-12 col-sm-12">
-                                            <div className="BorderLeft">
-                                                <DDivisionSearch />
-                                            </div>
-
-                                        </div>
-                                    </div>
-                                </div>
-                            </section>
-                            <>
-                                {/* <Ads /> */}
-                                <div className="row">
-                                    <div className="col-12">
-                                    <div className="DAdd2 d-flex  justify-content-center">
-                                    <Link to="">
-                                        <img src={"/media/Advertisement/145142-1683193093.jpeg"} alt="Header Advertisement" title="Header Advertisement" className="img-fluid img100" />
-                                    </Link>
-                                </div>
-                                    </div>
-                                </div>
-                               
-                            </>
-                            <section>
-                                <div className="container">
-                                    <div className="row">
-                                        <div className="col-lg-9 col-12">
-                                            <DNational />
-                                        </div>
-                                        <div className="col-lg-3 col-sm-12">
-                                            {/* <div className="DRightSideAdd mt-4">
-                                        <RightSideAds />
-                                    </div> */}
-                                            <PrayerTime />
-
-                                            <div className="fb-page-banner">
-                                                <FBpagePlugin />
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </section>
-                        </>
-                        <>
-                            {/* <Ads /> */}
-                            <div className="DAdd2 d-flex  justify-content-center">
-                                <Link to="">
-                                    <img src={"/media/Advertisement/2148954953036687476.png"} alt="Header Advertisement" title="Header Advertisement" className="img-fluid img100" />
-                                </Link>
-                            </div>
-                        </>
-
-                        <>
-                            <section>
-                                <div className="container">
-                                    <div className="row">
-                                        <div className="col-lg-9 col-12">
-
-                                            <DInternationalSec />
-                                        </div>
-                                        <div className="col-lg-3 col-sm-12">
-                                            <OnlinePoll />
-                                            <div className="DRightSideAdd mt-2">
-                                                <Link to="">
-                                                    <img src={"/media/Advertisement/ispahani.gif"} alt='ads' title='ads' />
-                                                </Link>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </section>
-
-                            <section>
-                                <div className="DBGWhite">
-                                    <OpinionSec />
-
-                                </div>
-                            </section>
-
-
-                        </>
-
-                        <>
-
-                            <div className="container">
-                                <section className="International + Economics + Politics">
-                                    <div className="row">
-                                        <div className="col-lg-4 col-12 BorderRight2">
-                                       
-                                                <DPoliticsSec />
-                                          
-                                        </div>
-                                        <div className="col-lg-4 col-12 BorderRight2 " >
-                                        
-                                                <DJob />
-                                      
-
-
-                                        </div>
-                                        <div className="col-lg-4 col-12">
-
-                                            <DBusiness />
-
-
-
-                                        </div>
-                                    </div>
-                                </section>
-                            </div>
-                            <section className="container">
-                                <div className="row">
-                                    <div className="col-md-12">
-                                        <div className="DAdd2 d-flex  justify-content-center">
-                                            <Link to="">
-                                                <img src={"media/Advertisement/570203398507806717.png"} alt="Header Advertisement" title="Header Advertisement" className="img-fluid img100" />
-                                            </Link>
-                                        </div>
-                                        {/* <Ads /> */}
-                                    </div>
-                                </div>
-                            </section>
-
-                            <section className="Entertainment">
-                                <DEntertainment />
-                            </section>
-                            <>
-                                {/* <Ads /> */}
-                                <div className="DAdd2 d-flex mt-2  justify-content-center">
-                                        <Link to="">
-                                            <img src={"/media/Advertisement/ads2.jpeg"} alt="Header Advertisement" title="Header Advertisement" className="img-fluid img100" />
-                                        </Link>
-                                    </div>
-                            </>
-
-                            <div className="container">
-                                <section className="Sports">
-                                    <Sports />
-                                </section>
-                            </div>
-
-                        </>
-
-
-
-                        <section className="Lifestyle">
-                            <Lifestyle />
-                        </section>
-                        <section className="container">
                             <div className="row">
-                                <div className="col-md-12 mt-2">
-                                    {/* <Ads /> */}
-                                    <div className="DAdd2 d-flex  justify-content-center">
-                                        <Link to="">
-                                            <img src={"/media/Advertisement/12565849791804438290.png"} alt="Header Advertisement" title="Header Advertisement" className="img-fluid img100" />
-                                        </Link>
-                                    </div>
-                                </div>
+                                <LeadNewsSection />
                             </div>
+
                         </section>
-
                         <>
-                            <div className="container">
-                                <section className=" + Economics + Politics">
-                                    <div className="row">
-                                        <div className="col-lg-3 col-12 BorderRight2 mb-3 mt-3">
-                                                <Crime />
-                                        </div>
-                                        <div className="col-lg-3 col-12 BorderRight2 mb-3 mt-3">
-                                                <Technology />
-                                        </div>
-                                        <div className="col-lg-3 col-12 BorderRight2 mb-3 mt-3">
-                                                <DForeign />
-                                        </div>
-                                        <div className="col-lg-3 col-12 mt-3 ">
-                                            <Religion />
-                                        </div>
-                                        <div className="col-lg-3 col-12 BorderRight2">
-                                            <Health /> 
-
-                                        </div>
-                                        <div className="col-lg-3 col-12 BorderRight2">
-                                     
-                                                <Law />
-                                        
-
-                                        </div>
-                                        <div className="col-lg-3 col-12">
-                                            <DEducation />
-                                        </div>
-                                        <div className="col-lg-3 col-12">
-                                            {/* <Cultural /> */}
-                                            <div className="ads-section">
-                                                <div className="DAdd2 d-flex  justify-content-center">
-                                                    <Link to="">
-                                                        <img src={"/media/Advertisement/15824348306179494464.gif"} alt="Header Advertisement" title="Header Advertisement" className="img-fluid img100" />
-                                                    </Link>
-                                                </div>
-                                            </div>
-
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <div class="DHomeAdd970X90 d-flex justify-content-center mt-4 mb-2">
+                                            <img src="media/Advertisement/Advertisement(970X90).png" alt="" title="" class="img-fluid" />
                                         </div>
                                     </div>
-                                </section>
+                                </div>
                             </div>
-                            <section className="container">
-                                <div className="row">
-                                    <div className="col-md-12">
-                                        {/* <Ads /> */}
-                                        <div className="DAdd2 d-flex  justify-content-center">
-                                                    <Link to="">
-                                                        <img src={"/media/Advertisement/ads.jpeg"} alt="Header Advertisement" title="Header Advertisement" className="img-fluid img100" />
-                                                    </Link>
-                                                </div>
-                                    </div>
-                                </div>
-                            </section>
-                            <section className="PhotoGallery">
-                                <div className="container">
-                                    <div className="DPhotoGallery">
-                                        <div className="row">
-                                            <div className="col-lg-9 col-12">
-                                                <PhotoSection />
-                                            </div>
-                                            <div className="col-lg-3 col-12 MT100">
-                                                <div className="DRightSideAdd">
-                                                    <Link to="">
-                                                        <img src={"/media/Advertisement/300x250.gif"} alt='ads' title='ads'  />
-                                                    </Link>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                    </div>
-                                </div>
-                            </section>
-
                         </>
+                        <section className='TopAllNews'>
+                            <div className="container">
+                                <div class="row">
+                                    <div class="col-lg-9 border-right-inner">
+                                        <BDSection />
+                                    </div>
+                                    <div className="col-lg-3">
+                                        <NewsTimeSpecial />
+                                    </div>
+                                </div>
 
-                    </>
-                  
-                
+                            </div>
+
+                        </section>
+                        <>
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <div class="DHomeAdd970X90 d-flex justify-content-center mt-4 mb-2">
+                                            <img src="media/Advertisement/Advertisement(970X90).png" alt="" title="" class="img-fluid" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </>
+                    </div>
 
 
+
+
+
+                </>
+
+
+
+                {!allComponentsLoaded ?
+                    <div className='container'>
+                        <div className='row d-flex'>
+                            <div className="col-lg-12 col-12 justify-content-between">
+                                <img style={{ width: '200px', marginLeft: 'auto', marginRight: 'auto', display: 'block' }} src={LazyLoaderGIF} alt="loading" title='loading' className='img-fluid img100' />
+                            </div>
+                        </div>
+                    </div> : ''}
 
             </main>
         </>

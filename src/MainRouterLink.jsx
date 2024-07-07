@@ -34,7 +34,8 @@ export default function MainRouterLink() {
         <div className="main-site">
             <Header />
             <Routes>
-            {/* <Route path="/" element={<Home />} /> */}
+            <Route path="/" element={<Home />} />
+            <Route path="/search/:searchSlug" element={<SearchResult />} />
                 {/* <Route path="/" element={<Home />} />
                 <Route path="/aboutUs" element={<AboutUs />} />
 

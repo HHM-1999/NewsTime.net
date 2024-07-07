@@ -7,7 +7,7 @@ import { scrollTop, ForLazyLoaderImg } from '../AllFunctions'
 import ErrorPage from '../ErrorPage';
 import CategoryPopular from './CategoryPopular';
 import SubCatLdJson from './SubCatLdJson';
-import LeadLatestNews from '../HomeContent/LeadLatestNews';
+import LeadLatestNews from '../HomeContent/LeadNews';
 // import RLoader from '../RLoader';
 // import RLoader from '../RLoader';
 

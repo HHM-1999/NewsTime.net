@@ -522,12 +522,15 @@ export default function Header() {
                                     <div class="serach-social-sec">
                                         <div class="row">
                                             <div class="col-lg-7">
-                                                <div class="search">
-                                                    <input onSubmit={handelSubmit} type="text" class="searchTerm" placeholder="এখানে লিখুন..." />
+                                               
+                                                    <form onSubmit={handelSubmit} class="search" >
+                                                    <input type="text" name="q" class="searchTerm" placeholder="এখানে লিখুন..." />
                                                     <button type="submit" class="searchButton">
                                                         <i class="fa fa-search"></i>
                                                     </button>
-                                                </div>
+                                                    </form>
+                                                    
+                                                
                                             </div>
                                             <div class="col-lg-5 d-flex justify-content-end ps-0">
                                                 <div class="social-icon">

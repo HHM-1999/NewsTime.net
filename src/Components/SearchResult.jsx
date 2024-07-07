@@ -4,7 +4,7 @@ import DocumentTitle from 'react-document-title'
 import { Link, useParams } from 'react-router-dom'
 import { useNavigate } from "react-router-dom";
 import { scrollTop, banglaDateConvetar, ForLazyLoaderImg } from './AllFunctions'
-import  LoadingGif from '../assets/media/common/loading.gif'
+import LoadingGif from '../assets/media/common/loading.gif'
 var lazyloaded = false
 var showMore = true
 var formData = []
@@ -79,12 +79,17 @@ export default function SearchResult() {
             <main>
                 <div className="container">
                     <div className="TopHomeSection"></div>
-                    <h2 className="DTitle">
+                    {/* <h2 className="DTitle">
                         <Link to={+ '/'} onClick={scrollTop}>
                             <span className="DTitleInner"><span className="DTitleInnerBar"><span>খুঁজুন</span></span></span>
                         </Link>
                         <DocumentTitle title="খুঁজুন | খুঁজুন সর্বশেষ খবর :: দ্য নিউজ ২৪" />
-                    </h2>
+                    </h2> */}
+                    <div class="CategoryPageTitleTop mt-3 text-center">
+                        <h2 class="CategoryPageTitle"><a href={+ '/'}><span class="CategoryPageTitle">খুঁজুন</span></a>
+                        <DocumentTitle title="খুঁজুন | খুঁজুন সর্বশেষ খবর :: নিউজটাইম ডটনেট" />
+                        </h2>
+                    </div>
 
                     {!searchValue ?
                         <><h1 className='warningHeaderForSearch'> <span>দুঃখিত,</span> কোন খবর খুঁজে পাওয়া যায়নি।</h1>

@@ -8,7 +8,7 @@ import FBpagePlugin from '../FBpagePlugin';
 import { LightgalleryProvider, LightgalleryItem } from "react-lightgallery";
 import { format } from 'date-fns'
 import DocumentTitle from 'react-document-title';
-import LeadLatestNews from '../HomeContent/LeadLatestNews';
+import LeadLatestNews from '../HomeContent/LeadNews';
 // import RLoader from '../RLoader';
 // import RLoader from '../RLoader';
 
