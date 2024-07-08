@@ -5,8 +5,7 @@ import Sports from './HomeContent/Sports'
 import { Link } from 'react-router-dom'
 import DocumentTitle from 'react-document-title'
 import Ads from './HomeContent/Ads'
-import VideoSec from './HomeContent/VideoSec'
-import DCountry from './HomeContent/DCountry'
+// import DCountry from './HomeContent/DCountry'
 import DDivisionSearch from './HomeContent/DDivisionSearch'
 import DNational from './HomeContent/DNational'
 import DInternationalSec from './HomeContent/DInternationalSec'
@@ -32,7 +31,9 @@ import FBpagePlugin from './FBpagePlugin'
 import LazyLoaderGIF from '../assets/media/common/loading.gif'
 import BDSection from './HomeContent/BDSection'
 import NewsTimeSpecial from './HomeContent/NewsTimeSpecial'
-
+import DCountry from './HomeContent/DCountry'
+import VideoSec from './HomeContent/VideoSec'
+import Youth from './HomeContent/Youth'
 
 var allComponentsLoaded = false
 export default function Home() {
@@ -96,9 +97,7 @@ export default function Home() {
                                         <NewsTimeSpecial />
                                     </div>
                                 </div>
-
                             </div>
-
                         </section>
                         <>
                             <div class="container">
@@ -111,6 +110,43 @@ export default function Home() {
                                 </div>
                             </div>
                         </>
+                        <div className="container">
+                            <DCountry />
+                        </div>
+                        <>
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <div class="DHomeAdd970X90 d-flex justify-content-center mt-4 mb-2">
+                                            <img src="media/Advertisement/Advertisement(970X90).png" alt="" title="" class="img-fluid" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </>
+
+                        <VideoSec />
+                        <>
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <div class="DHomeAdd970X90 d-flex justify-content-center mt-4 mb-2">
+                                            <img src="media/Advertisement/Advertisement(970X90).png" alt="" title="" class="img-fluid" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </>
+                        <section class="tarunno-economy-area-news">
+                            <div class="container">
+                                <div className="row">
+                                    <div class="col-lg-4 border-right-inner">
+                                        <Youth />
+                                    </div>
+                                </div>
+                            </div>
+
+                        </section>
                     </div>
 
 

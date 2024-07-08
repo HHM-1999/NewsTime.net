@@ -27,7 +27,7 @@ export default function SelectedVideo() {
             <div class="row">
                 <div class="col-lg-12">
                     <div class="AllSecTitle">
-                        <a href="#">
+                        <a href="/video">
                             <h2>বাছাই ভিডিও
                             </h2>
                         </a>

@@ -4,14 +4,18 @@ import { Link } from 'react-router-dom'
 import { scrollTop, ForLazyLoaderImg } from '../AllFunctions'
 var lazyloaded = false
 export default function DCountry() {
-    const [country, setCountry] = useState([])
-    const [country2, setCountry2] = useState([])
+    const [state, setState] = useState([])
+    const [state2, setState2] = useState([])
+    const [state3, setState3] = useState([])
+    const [divisionName, setDivisionName] = useState([])
+    // const [districtName, setDistrictName] = useState([])
     useEffect(() => {
         axios
-            .get(`${process.env.REACT_APP_API_URL}json/file/generateCategory2.json`)
+            .get(`${process.env.REACT_APP_API_URL}json/file/generateSpecial2.json`)
             .then(({ data }) => {
-                setCountry(data.data.slice(0, 1))
-                setCountry2(data.data.slice(1, 4))
+                setState(data.data[0])
+                setState2(data.data.slice(1, 4))
+                setState3(data.data.slice(4,7))
                 setTimeout(function () {
                     lazyloaded = false
                     ForLazyLoaderImg(lazyloaded)
@@ -19,70 +23,179 @@ export default function DCountry() {
             })
     }, [])
 
+    useEffect(() => {
+        axios
+            .get(`${process.env.REACT_APP_API_URL}division`)
+            .then(({ data }) => {
+                setDivisionName(data.divisions);
+            });
+    }, [])
+
+    const getDist = (e) => {
+        e.preventDefault();
+
+        //disabled ture & false
+        if (document.getElementById("division") !== null) {
+            document.getElementById("button").disabled = false;
+        } else {
+            document.getElementById("button").disabled = true;
+        }//disabled ture & false
+
+        var division = e.target.value
+        console.log(division);
+        // if (division !== 0) {
+        //     axios
+        //         .get(`${process.env.REACT_APP_API_URL}districtInDivision/${division}`)
+        //         .then(({ data }) => {
+        //             setDistrictName(data.districtInDivision);
+        //         });
+        // } else {
+        //     setDistrictName([]);
+        // }
+    }
+    const getURL = (e) => {
+        e.preventDefault()
+        var url = ""
+        var division = e.target.division.value
+        // var district = e.target.district.value
+        if (division > '0') { url = '/divisions/' + division }
+        // if (district > '0') { url = '/divisions/' + division + '/' + district }
+        console.log(url);
+        window.location.href = url;
+    }
+
+
     return (
         <>
-            <div className="SectionTitle"><h3><Link to="/country" onClick={scrollTop}><span className="ColorBox"></span>স্বদেশ</Link></h3></div>
-            <div className="row">
-                {country.map((nc, i) => {
-                    return (
-                        <div className="col-lg-6 col-12">
-                            <div className="SpecialEventTop">
-
-                                <Link to={"/" + nc.Slug + "/news/" + nc.ContentID} key={nc.CategoryID} onClick={scrollTop}>
-                                    <div className="DImgZoomBlock">
-                                        <picture>
-                                            <img src={process.env.REACT_APP_LAZYL_IMG} data-src={process.env.REACT_APP_IMG_Path + nc.ImageBgPath} alt={nc.ContentHeading} title={nc.ContentHeading}
-                                                className="img-fluid img100" />
-                                            {nc.ShowVideo === 1 && <div className="card-video-icon big transition"> <i className="fa-solid fa-play"></i> </div>}
-                                        </picture>
+            <section class="desh-news-area">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="row">
+                                <div class="col-lg-9">
+                                    <div class="row">
+                                        <div class="col-lg-12">
+                                            <div class="AllSecTitle">
+                                                <a href="/country">
+                                                    <h2>দেশ</h2>
+                                                </a>
+                                            </div>
+                                        </div>
                                     </div>
-                                    <div className="Desc">
-                                        {nc.ContentSubHeading == null ?
-                                            <h2 className="Title FW700">{nc.ContentHeading} </h2> :
-                                            <h2 className="Title FW700"> <span className="subheadTitle">{nc.ContentSubHeading + " /"}</span> {nc.ContentHeading} </h2>
-                                        }
+                                </div>
+                                <div class="col-lg-3">
+                                    <div class="desh-area-search">
+                                        <div class="AreaSearch">
+                                            <form onSubmit={getURL}>
+                                                <div class="row form-group gx-2">
+                                                    <div class="col-md-9">
+                                                        <select defaultValue={'0'} class="form-select" aria-label="Default select example" name="division" id="division" onChange={getDist}>
+                                                            <option value="0" disabled>--বিভাগ--</option>
+                                                            {divisionName.map((nc) => {
+                                                                return (
+                                                                    <option data-id={nc.DivisionID} key={nc.DivisionID} value={nc.DivisionSlug}>{nc.DivisionNameBn}</option>
+                                                                )
+                                                            })}
+                                                            {/* <option value="0" disabled>--বিভাগ--</option>
+                                                        <option data-id="2" value="barisal">বরিশাল</option>
+                                                        <option data-id="3" value="chittagong">চট্টগ্রাম
+                                                        </option>
+                                                        <option data-id="4" value="dhaka">ঢাকা</option>
+                                                        <option data-id="5" value="khulna">খুলনা</option>
+                                                        <option data-id="6" value="rajshahi">রাজশাহী</option>
+                                                        <option data-id="7" value="sylhet">সিলেট</option>
+                                                        <option data-id="8" value="rangpur">রংপুর</option>
+                                                        <option data-id="9" value="mymensingh">ময়মনসিংহ
+                                                        </option> */}
+                                                        </select>
+                                                    </div>
+                                                    <div class="col-md-3 d-flex align-items-center justify-content-center">
+                                                        <button type="submit" name="btnSubmit" class="btn btn-danger searchCap btn-block d-flex" disabled={true} ><i class="fas fa-search"></i> খুঁজুন
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
-                                        {/* <h2 className="Title FW700">{nc.ContentSubHeading ===1 && <span className="subheadTitle">{nc.ContentSubHeading  + " /"}</span> } {nc.ContentHeading}</h2> */}
-                                        <div className="Brief">
-                                            <p>{nc.ContentBrief}</p>
+                    <div class="row">
+                        <div class="col-lg-6 border-right-inner">
+                            <div class="CommonLead3">
+                                <Link to={"/" + state.Slug + "/" + state.ContentID} onClick={scrollTop}>
+                                    <div class="row">
+                                        <div class="col-lg-8">
+                                            <picture><img src={process.env.REACT_APP_IMG_Path + state.ImageBgPath} alt={state.ContentHeading} title={state.ContentHeading} className="img-fluid img100" /></picture>
+                                            {state.ShowVideo === 1 || state.VideoID !== null ? <span className="play-btn-big"><i className="fas fa-play"></i></span> : ""}
+                                        </div>
+                                        <div class="col-lg-4 order-lg-first">
+                                            <div class="Desc">
+                                                <h2 class="Title FW700"> {state.ContentHeading}
+                                                </h2>
+                                                <div class="Brief">
+                                                    <p>{state.ContentBrief}
+                                                    </p>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </Link>
                             </div>
                         </div>
-                    )
-                })}
-                <div className="col-lg-6 col-12">
-                    {country2.map((nc, i) => {
-                        return (
-                            <div className="SpecialEventList">
-                                <Link to={"/" + nc.Slug + "/news/" + nc.ContentID} key={nc.CategoryID} onClick={scrollTop} >
-                                    <div className="row">
-                                        <div className="col-lg-4 col-4">
-                                            <div className="DImgZoomBlock">
-                                                <picture>
-                                                    <img src={process.env.REACT_APP_LAZYL_IMG} data-src={process.env.REACT_APP_IMG_Path + nc.ImageSmPath} alt={nc.ContentHeading} title={nc.ContentHeading} className="img-fluid img100" />
-                                                    {nc.ShowVideo === 1 && <div className="card-video-icon big transition"> <i className="fa-solid fa-play"></i> </div>}
-                                                </picture>
-                                            </div>
-                                        </div>
-                                        <div className="col-lg-8 col-8">
-                                            <div className="Desc">
-                                            {nc.ContentSubHeading == null ?
-                                            <h2 className="Title FW700">{nc.ContentHeading} </h2> :
-                                            <h2 className="Title FW700"> <span className="subheadTitle">{nc.ContentSubHeading + " /"}</span> {nc.ContentHeading} </h2>
-                                        }
-                                                {/* <h2 className="Title FW700">{nc.ContentSubHeading === 1 && <span className="subheadTitle">{nc.ContentSubHeading + "/ "}</span>}{nc.ContentHeading} </h2> */}
-                                            </div>
-                                        </div>
-                                    </div>
-                                </Link>
-                            </div>
-                        )
-                    })}
-                </div>
-            </div>
+                        <div class="col-lg-3 border-right-inner">
+                            <div class="Common-list">
+                                {state2.map((nc) => {
+                                    return (
+                                        <div class="CommonLeadList">
+                                            <a href="#">
+                                                <div class="row">
+                                                    <div class="col-lg-7 col-7">
+                                                        <div class="Desc">
+                                                            <h2 class="Title FW700"> {nc.ContentHeading}</h2>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-5 col-5">
 
+                                                        <picture><img src={process.env.REACT_APP_IMG_Path + nc.ImageBgPath} alt={nc.ContentHeading} title={nc.ContentHeading} className="img-fluid img100" /></picture>
+                                                        {nc.ShowVideo === 1 || nc.VideoID !== null ? <span className="play-btn-big"><i className="fas fa-play"></i></span> : ""}
+
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    )
+                                })}
+                            </div>
+                        </div>
+                        <div class="col-lg-3">
+                        <div class="Common-list">
+                                {state3.map((nc) => {
+                                    return (
+                                        <div class="CommonLeadList">
+                                            <a href="#">
+                                                <div class="row">
+                                                    <div class="col-lg-7 col-7">
+                                                        <div class="Desc">
+                                                            <h2 class="Title FW700"> {nc.ContentHeading}</h2>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-5 col-5">
+                                                        <picture><img src={process.env.REACT_APP_IMG_Path + nc.ImageBgPath} alt={nc.ContentHeading} title={nc.ContentHeading} className="img-fluid img100" /></picture>
+                                                        {nc.ShowVideo === 1 || nc.VideoID !== null ? <span className="play-btn-big"><i className="fas fa-play"></i></span> : ""}
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    )
+                                })}
+                            </div>
+                    </div>
+                    </div>
+                </div >
+            </section >
         </>
 
     )

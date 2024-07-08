@@ -2,7 +2,10 @@ import React, { useState, useEffect, useRef } from 'react'
 import axios from 'axios'
 import { Link } from 'react-router-dom'
 import { scrollTop, ForLazyLoaderImg } from '../AllFunctions'
-import Slider from 'react-slick';
+// import Slider from 'react-slick';
+import OwlCarousel from 'react-owl-carousel';
+import 'owl.carousel/dist/assets/owl.carousel.css';
+import 'owl.carousel/dist/assets/owl.theme.default.css';
 
 
 var lazyloaded = false
@@ -74,7 +77,7 @@ export default function VideoSec() {
     return (
         <>
 
-            <div className="container">
+            {/* <div className="container">
                 <div className="SectionTitle"><h3><Link to="/video" onClick={scrollTop}><span className="ColorBox"></span>ভিডিও</Link></h3></div>
                 <div className="MoreVideoArea">
 
@@ -122,9 +125,81 @@ export default function VideoSec() {
                 </div>
 
 
+            </div> */}
+            <div class="DPhotoSecBG">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="AllSecTitle">
+                                <a href="/video">
+                                    <h2>ভিডিও</h2>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="FeaturedSlider">
+                        <div class="owl-slider">
+
+                            <OwlCarousel  id="carousel" class="owl-carousel" items={4}  loop margin={10} nav>
+                                {videos.map((nc) => {
+                                    return (
+                                        <div class="item" style={{ padding: "0 10px", margin: "0 10px" }}>
+                                            <div class="DPhotoGalleryList">
+                                                <Link to={"/video/show/" + nc.WebTVID} onClick={scrollTop}>
+                                                    <picture>
+                                                        <img src={process.env.REACT_APP_LAZYL_IMG} data-src={'https://img.youtube.com/vi/' + nc.WebTVLinkCode + '/0.jpg'} width={406} height={228} alt={nc.WebTVHeading} title={nc.WebTVHeading} className="img100 ImgRatio" />
+                                                        <div class="card-video-icon transition"></div>
+                                                    </picture>
+                                                    <div class="card-video-icon transition"></div>
+                                                    <div class="Desc">
+                                                        <h3 class="Title">{nc.WebTVHeading}</h3>
+                                                    </div>
+                                                </Link>
+                                            </div>
+                                        </div>
+                                    )
+                                })}
+
+
+                            </OwlCarousel>
+                        </div>
+                    </div>
+                    {/* <div className="slider-container">
+                        <div className="row Dmargin">
+                            <Slider ref={slider => {
+                                sliderRef = slider;
+                            }}
+                                {...settings}>
+                                {videos.map((nc) => {
+                                    return (
+                                        <div class="item">
+                                            <div class="DPhotoGalleryList">
+                                                <Link to={"/video/show/" + nc.WebTVID} onClick={scrollTop} style={{ padding: "0 10px", margin: "0 10px" }}>
+                                                    <picture>
+                                                        <img src={process.env.REACT_APP_LAZYL_IMG} data-src={'https://img.youtube.com/vi/' + nc.WebTVLinkCode + '/0.jpg'} width={406} height={228} alt={nc.WebTVHeading} title={nc.WebTVHeading} className="img100 ImgRatio" />
+                                                        <div class="card-video-icon transition"></div>
+                                                    </picture>
+                                                    <div class="card-video-icon transition"></div>
+                                                    <div class="Desc">
+                                                        <h3 class="Title">{nc.WebTVHeading}</h3>
+                                                    </div>
+                                                </Link>
+                                            </div>
+                                        </div>
+                                    )
+                                })}
+                            </Slider>
+
+                        </div>
+
+
+
+                    </div> */}
+                </div>
             </div>
-            <script src="https://cdnjs.cloudflare.com/ajax/libs/react-slick/0.30.2/react-slick.min.js" integrity="sha512-9cn+e5E0uqJxF/RA4PERrZ9654f/pPwSWJWe1fPavysxUdVe0xYTj09jzlKW5pd9vrgaNtqDpW9CwkvKXdUBSw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-            <script src="https://cdnjs.cloudflare.com/ajax/libs/react-slick/0.30.2/react-slick.js" integrity="sha512-aP0zyfgfU02K5gDdprwgUcfmGQJ7zoVQPdIl1irO8iXCUJ80yWeTg/WTRwTJuV0pny/jWLZqBZwhz8pkb6NxlA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+            {/* <script src="https://cdnjs.cloudflare.com/ajax/libs/react-slick/0.30.2/react-slick.min.js" integrity="sha512-9cn+e5E0uqJxF/RA4PERrZ9654f/pPwSWJWe1fPavysxUdVe0xYTj09jzlKW5pd9vrgaNtqDpW9CwkvKXdUBSw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/react-slick/0.30.2/react-slick.js" integrity="sha512-aP0zyfgfU02K5gDdprwgUcfmGQJ7zoVQPdIl1irO8iXCUJ80yWeTg/WTRwTJuV0pny/jWLZqBZwhz8pkb6NxlA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> */}
 
         </>
 

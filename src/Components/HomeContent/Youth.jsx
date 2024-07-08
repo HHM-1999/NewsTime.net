@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 import { scrollTop, ForLazyLoaderImg } from '../AllFunctions'
 
 var lazyloaded = false
-export default function NewsTimeSpecial() {
+export default function Youth() {
     const [news, setNews] = useState([])
     const [news2, setNews2] = useState([])
 

@@ -1418,6 +1418,59 @@ a.close-search {
 	font-size: 18px;
 	line-height: 26px;
 }
+/* newstimespecial */
+.DHomeTopLead {
+	background: #fff;
+	position: relative;
+	margin-top: 15px;
+	border-top: 1px solid #e2e2e2;
+	padding-top: 15px;
+}
+
+.DHomeTopLead .Desc .Title {
+	font-size: 18px;
+	line-height: 25px;
+	color: #333;
+	font-weight: 700;
+	margin-top: 0px;
+	padding-left: 2px !important;
+}
+
+.DHomeTopLead:hover .Title {
+	color: #001D9B;
+
+}
+.DHomeTopLead .Desc .subheadTitle{
+	font-size: 18px;
+	color: #0573E6;
+	font-weight: 600;
+}
+
+.subheadTitle{
+	font-size: 18px;
+	color: #0573E6;
+	font-weight: 600;
+}
+
+
+.DHomeTopLead .Desc .Brief p {
+	-webkit-line-clamp: 3;
+	color: #555;
+	font-size: 16px;
+	line-height: 24px;
+	margin-top: 7px;
+}
+
+.DHomeTopLead .PublishTime {
+	position: absolute;
+	color: #777;
+	font-size: 14px;
+	bottom: 10px;
+}
+
+.DHomeTopLead picture img {
+	aspect-ratio: 1.57;
+}
 
 .DLatestNewsSec {
 	margin-top: 30px;
@@ -1946,6 +1999,7 @@ a.close-search {
 
 .DPhotoGalleryList {
 	position: relative;
+	width: 100%;
 }
 
 .DPhotoGalleryList .Desc {
@@ -2010,6 +2064,9 @@ a.close-search {
 .owl-dots {
 	text-align: center;
 	padding-top: 15px;
+}
+.owl-slider .owl-carousel .owl-nav.disabled, .owl-carousel .owl-dots.disabled {
+	display: block;
 }
 
 .FeaturedSlider .owl-nav button {
