@@ -4,15 +4,14 @@ import { Link } from 'react-router-dom'
 import { scrollTop, ForLazyLoaderImg } from '../AllFunctions'
 
 var lazyloaded = false
-export default function Health() {
+export default function Education() {
     const [edu, setEdu] = useState([])
     const [edu2, setEdu2] = useState([])
 
 
-
     useEffect(() => {
         axios
-            .get(`${process.env.REACT_APP_API_URL}json/file/generateCategory11.json`)
+            .get(`${process.env.REACT_APP_API_URL}json/file/generateCategory3.json`)
             .then(({ data }) => {
                 if (data.data.length > 0) {
                     setEdu(data.data[0]);
@@ -27,12 +26,12 @@ export default function Health() {
     }, [])
     return (
         <>
-              <div class="multiple-news-wrap">
+            <div class="multiple-news-wrap">
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="AllSecTitle">
-                            <a href="/health">
-                                <h2>স্বাস্থ্য</h2>
+                            <a href="/education">
+                                <h2>শিক্ষা</h2>
                             </a>
                         </div>
                     </div>

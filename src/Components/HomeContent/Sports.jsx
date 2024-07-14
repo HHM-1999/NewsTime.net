@@ -13,96 +13,90 @@ export default function Sports() {
         axios
             .get(`${process.env.REACT_APP_API_URL}json/file/generateCategory6.json`)
             .then(({ data }) => {
+                if (data.data.length > 0) {
+                    setSports(data.data[0]);
+                    setSports2(data.data.slice(1,5));
 
-                setSports(data.data.slice(0, 2))
-                setSports2(data.data.slice(2, 6))
-
-                setTimeout(function () {
-                    lazyloaded = false
-                    ForLazyLoaderImg(lazyloaded)
-                }, 1000);
-
-
-            })
+                    setTimeout(function () {
+                        lazyloaded = false
+                        ForLazyLoaderImg(lazyloaded)
+                    }, 1000);
+                }
+            });
     }, [])
     return (
         <>
-            <div className="SectionTitle"><h3><Link to="/sports"><span className="ColorBox"></span>ক্রীড়াঙ্গন</Link></h3></div>
-            <div className="DSports">
-                <div className="row">
-                    <div className="col-lg-8 col-12 ">
-                        <div className="row">
-                            {sports.map((nc) => {
-                                return (
-                                    <div className="col-lg-6 col-12  mt-3">
-                                        <div className="DSportsTop">
-                                            <Link to={"/" + nc.Slug + "/news/" + nc.ContentID} key={nc.ContentID} onClick={scrollTop}>
-                                                <div className="Imgresize">
-                                                    <figure className="ImgViewer">
-                                                        <picture className="FixingRatio">
-                                                            <img src={process.env.REACT_APP_LAZYL_IMG} data-src={process.env.REACT_APP_IMG_Path + nc.ImageBgPath} alt={nc.ContentHeading} title={nc.ContentHeading} className="img-fluid img100 ImgRatio" />
-                                                            {nc.ShowVideo === 1 && <div className="card-video-icon big transition"> <i className="fa-solid fa-play"></i> </div>}
-                                                        </picture>
-                                                    </figure>
-                                                </div>
-                                                <div className="Desc">
-                                                    <div className="NewsTitle">
-                                                        {/* <h3 className="Title">{nc.ContentHeading}</h3> */}
-                                                        {nc.ContentSubHeading == null ?
-                                                            <h3 className="Title">{nc.ContentHeading} </h3> :
-                                                            <h3 className="Title"> <span className="subheadTitle">{nc.ContentSubHeading + " /"}</span> {nc.ContentHeading} </h3>
-                                                        }
-
-                                                    </div>
-                                                    <div className="Brief"><p>{nc.ContentBrief}</p></div>
-                                                </div>
-                                            </Link>
-                                        </div>
-                                    </div>
-                                )
-                            })}
+            <section class="Sports-area-news">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="AllSecTitle">
+                                <a href="/sports">
+                                    {/* <!-- <span class="RIghtBar"></span> --> */}
+                                    <h2>খেলা</h2>
+                                </a>
+                            </div>
                         </div>
-
                     </div>
-                    <div className="col-lg-4 col-12  ">
-                        <div className="DSportsTop2">
-                            {sports2.map((nc) => {
-                                return (
-                                    <div className="DSportsTop2List  mt-2">
-                                        <Link to={"/" + nc.Slug + "/news/" + nc.ContentID} key={nc.ContentID} onClick={scrollTop}>
-                                            <div className="row">
-                                                <div className="col-4">
-                                                    <div className="Imgresize">
-                                                        <figure className="ImgViewer">
-                                                            <picture className="FixingRatio">
-                                                                <img src={process.env.REACT_APP_LAZYL_IMG} data-src={process.env.REACT_APP_IMG_Path + nc.ImageSmPath} alt={nc.ContentHeading} title={nc.ContentHeading} className="img-fluid img100 ImgRatio" />
-                                                                {nc.ShowVideo === 1 && <div className="card-video-icon big transition"> <i className="fa-solid fa-play"></i> </div>}
-                                                            </picture>
-                                                        </figure>
-                                                    </div>
-                                                </div>
-                                                <div className="col-8">
-                                                    <div className="Des8">
-                                                        {/* <h2 className="Title">{nc.ContentHeading}</h2> */}
-                                                        {nc.ContentSubHeading == null ?
-                                                            <h2 className="Title">{nc.ContentHeading} </h2> :
-                                                            <h2 className="Title"> <span className="subheadTitle">{nc.ContentSubHeading + " /"}</span> {nc.ContentHeading} </h2>
-                                                        }
-
-                                                    </div>
-                                                </div>
+                    <div class="CommonSecNews2-wrapper">
+                        <div class="row">
+                            <div class="col-lg-6 col-12 d-flex border-right-inner">
+                                <div class="CommonLead2">
+                                    <Link to={"/" + sports.Slug + "/news/" + sports.ContentID} onClick={scrollTop}>
+                                        <div class="">
+                                            <picture>
+                                                <img src={process.env.REACT_APP_IMG_Path + sports.ImageBgPath} alt={sports.ContentHeading} title={sports.ContentHeading} className="img-fluid img100" />
+                                                {sports.ShowVideo === 1 && <div className="card-video-icon transition">  </div>}
+                                            </picture>
+                                        </div>
+                                        <div class="Desc">
+                                            <h2 class="Title FW700"> {sports.ContentHeading}
+                                            </h2>
+                                            <div class="Brief">
+                                                <p>{sports.ContentBrief} </p>
                                             </div>
-                                        </Link>
+                                        </div>
+                                    </Link>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-12">
+                                <div class="sports-right">
+                                    <div class="row">
+                                        {sports2.map((nc) => {
+                                            return (
+                                                <div class="col-lg-6 border-right-inner">
+                                                    <div class="Common-list2">
+                                                        <div class="Common-list2-details">
+                                                            <Link to={"/" + nc.Slug + "/news/" + nc.ContentID} onClick={scrollTop}>
+                                                                <div class="row">
+                                                                    <div class="col-lg-12 col-5">
+                                                                        <picture>
+                                                                            <img src={process.env.REACT_APP_IMG_Path + nc.ImageBgPath} alt={nc.ContentHeading} title={nc.ContentHeading} className="img-fluid img100" />
+                                                                            {nc.ShowVideo === 1 && <div className="card-video-icon transition">  </div>}
+                                                                        </picture>
+                                                                    </div>
+                                                                    <div class="col-lg-12 col-7">
+                                                                        <div class="Desc">
+                                                                            <h3 class="Title">{nc.ContentHeading}</h3>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+
+                                                            </Link>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            )
+                                        })}
+
+
                                     </div>
-                                )
-                            })}
-
-
-
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
+            </section>
         </>
 
     )

@@ -4,17 +4,16 @@ import { Link } from 'react-router-dom'
 import { ForLazyLoaderImg, scrollTop } from '../AllFunctions'
 var lazyloaded = false
 export default function International() {
-    const [state, setState] = useState([])
+    const [news, setNews] = useState([])
     const [state2, setState2] = useState([])
-    const [state3, setState3] = useState([])
     useEffect(() => {
         axios
-            .get(`${process.env.REACT_APP_API_URL}json/file/generateCategory3.json`)
+            .get(`${process.env.REACT_APP_API_URL}json/file/generateCategory4.json`)
             .then(({ data }) => {
                 if (data.data.length > 0) {
-                    setState(data.data[0]);
-                    setState2(data.data.slice(1, 3));
-                    setState3(data.data.slice(3, 5));
+                    setNews(data.data[0]);
+                    setState2(data.data.slice(1, 7));
+
                     setTimeout(function () {
                         lazyloaded = false
                         ForLazyLoaderImg(lazyloaded)
@@ -23,82 +22,56 @@ export default function International() {
             });
     }, [])
     return (
-        <section>
-            <div className="SectionSBorder2 mt-5">
-                <div className="SPSecTitle">
-                    <Link to="/international" onClick={scrollTop}>
-                        <h2>বিদেশে এখন</h2>
-                    </Link>
-                </div>
-            </div>
-            <div className="International">
-                <div className="row">
-                    <div className="col-lg-3 col-12">
-                        <div className="DInternational align-self-stretch">
-                            <Link to={"/" + state.Slug + "/news/" + state.ContentID} onClick={scrollTop}>
-                                <div className="DImgZoomBlock">
-                                    <picture><img src={process.env.REACT_APP_LAZYL_IMG} data-src={process.env.REACT_APP_IMG_Path + state.ImageSmPath} alt={state.ContentHeading} title={state.ContentHeading} /></picture>
-                                    {state.ShowVideo === 1 && <div className="card-video-icon"><i className="fa-solid fa-play"></i></div>}
-                                </div>
-                                <div className="Desc">
-                                    <h3 className="Title BGTitle">{state.ContentHeading}</h3>
-                                </div>
-                            </Link>
+        <section class="international-area-news">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="AllSecTitle">
+                            <a href="/international">
+                                {/* <!-- <span class="RIghtBar"></span> --> */}
+                                <h2>আন্তর্জাতিক</h2>
+                            </a>
                         </div>
                     </div>
-                    <div className="col-lg-9 col-12">
+                </div>
+                <div class="row">
+                    <div class="col-lg-8 border-right-inner">
+                        <div class="CommonSecNews4-wrapper">
+                            <div class="CommonLead4">
+                                <Link to={"/" + news.Slug + "/news/" + news.ContentID} onClick={scrollTop}>
+                                    <picture>
+                                        <img src={process.env.REACT_APP_IMG_Path + news.ImageBgPath} alt={news.ContentHeading} title={news.ContentHeading} className="img-fluid img100" />
+                                        {news.ShowVideo === 1 && <div className="card-video-icon transition">  </div>}
+                                    </picture>
+                                    <div class="Desc">
+                                        <h3 class="Title">{news.ContentHeading}</h3>
+                                    </div>
+                                </Link>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="Common-list">
+                            {state2.map((nc)=>{
+                                return(
+                                    <div class="Common-listBox-item">
+                                <Link to={"/" + nc.Slug + "/news/" + nc.ContentID} onClick={scrollTop}>
+                                    <div class="Desc">
+                                        <h3 class="Title"> <span class="subHeading">{nc.ContentSubHeading}</span>{nc.ContentHeading}
+                                        </h3>
+                                    </div>
+                                </Link>
+                            </div>
+                                )
+                            })}
+                            
 
-                        <div className="row">
-                            <div className="col-lg-6 col-12">
-                                {state2.map((nc) => {
-                                    return (
-                                        <div className="DTop3List" key={nc.ContentID}>
-                                            <Link to={"/" + nc.Slug + "/news/" + nc.ContentID} onClick={scrollTop}>
-                                                <div className="row">
-                                                    <div className="col-lg-4 col-sm-3 col-5">
-                                                        <div className="DImgZoomBlock">
-                                                            <picture><img src={process.env.REACT_APP_LAZYL_IMG} data-src={process.env.REACT_APP_IMG_Path + nc.ImageThumbPath} alt={nc.ContentHeading} title={nc.ContentHeading} /></picture>
-                                                            {nc.ShowVideo === 1 && <div className="card-video-icon"><i className="fa-solid fa-play"></i></div>}
-                                                        </div>
-                                                    </div>
-                                                    <div className="col-lg-8 col-sm-9 col-7 textBorder2">
-                                                        <div className="Desc textBorder">
-                                                            <h3 className="Title BGTitle">{nc.ContentHeading}</h3>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </Link>
-                                        </div>
-                                    )
-                                })}
-                            </div>
-                            <div className="col-lg-6 col-12">
-                                {state3.map((nc) => {
-                                    return (
-                                        <div className="DTop3List" key={nc.ContentID}>
-                                            <Link to={"/" + nc.Slug + "/news/" + nc.ContentID} onClick={scrollTop}>
-                                                <div className="row">
-                                                    <div className="col-lg-4 col-sm-3 col-5">
-                                                        <div className="DImgZoomBlock">
-                                                            <picture><img src={process.env.REACT_APP_LAZYL_IMG} data-src={process.env.REACT_APP_IMG_Path + nc.ImageThumbPath} alt={nc.ContentHeading} title={nc.ContentHeading} /></picture>
-                                                            {nc.ShowVideo === 1 && <div className="card-video-icon"><i className="fa-solid fa-play"></i></div>}
-                                                        </div>
-                                                    </div>
-                                                    <div className="col-lg-8 col-sm-9 col-7 textBorder2">
-                                                        <div className="Desc textBorder">
-                                                            <h3 className="Title BGTitle">{nc.ContentHeading}</h3>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </Link>
-                                        </div>
-                                    )
-                                })}
-                            </div>
                         </div>
                     </div>
                 </div>
             </div>
+
         </section>
+
     )
 }

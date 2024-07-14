@@ -13,16 +13,15 @@ import OnlinePoll from './HomeContent/OnlinePoll'
 import OpinionSec from './HomeContent/OpinionSec'
 import DPoliticsSec from './HomeContent/DPoliticsSec'
 import DJob from './HomeContent/DJob'
-import DBusiness from './HomeContent/DBusiness'
+
 import DEntertainment from './HomeContent/DEntertainment'
 import Lifestyle from './HomeContent/Lifestyle'
-import Crime from './HomeContent/Crime'
+
 import Technology from './HomeContent/Technology'
 import DForeign from './HomeContent/DForeign'
 import Religion from './HomeContent/Religion'
 import Health from './HomeContent/Health'
 import Law from './HomeContent/Law'
-import DEducation from './HomeContent/DEducation'
 import PhotoSection from './HomeContent/PhotoSection'
 import PrayerTime from './HomeContent/PrayerTime'
 // import Event from './HomeContent/Event'
@@ -34,6 +33,12 @@ import NewsTimeSpecial from './HomeContent/NewsTimeSpecial'
 import DCountry from './HomeContent/DCountry'
 import VideoSec from './HomeContent/VideoSec'
 import Youth from './HomeContent/Youth'
+import Finance from './HomeContent/Finance'
+import International from './HomeContent/International'
+import Entertaiment from './HomeContent/Entertaiment'
+import Education from './HomeContent/Education'
+import ScienceTechnology from './HomeContent/ScienceTechnology'
+import FactCheck from './HomeContent/FactCheck'
 
 var allComponentsLoaded = false
 export default function Home() {
@@ -64,9 +69,7 @@ export default function Home() {
         <>
             <main>
                 {/* <Event /> */}
-
                 <>
-
                     <DocumentTitle title='NewsTime.net :: নিউজটাইম ডটনেট' />
                     <HomeLdJson />
                     <div className="FirstSectioComponent">
@@ -74,7 +77,6 @@ export default function Home() {
                             <div className="row">
                                 <LeadNewsSection />
                             </div>
-
                         </section>
                         <>
                             <div class="container">
@@ -110,9 +112,9 @@ export default function Home() {
                                 </div>
                             </div>
                         </>
-                        <div className="container">
-                            <DCountry />
-                        </div>
+
+                        <DCountry />
+
                         <>
                             <div class="container">
                                 <div class="row">
@@ -140,13 +142,91 @@ export default function Home() {
                         <section class="tarunno-economy-area-news">
                             <div class="container">
                                 <div className="row">
-                                    <div class="col-lg-4 border-right-inner">
-                                        <Youth />
-                                    </div>
+                                    <Youth />
+                                    <Finance />
+
                                 </div>
                             </div>
 
                         </section>
+                        <>
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <div class="DHomeAdd970X90 d-flex justify-content-center mt-4 mb-2">
+                                            <img src="media/Advertisement/Advertisement(970X90).png" alt="" title="" class="img-fluid" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </>
+                        <>
+                            <International />
+                        </>
+                        <>
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <div class="DHomeAdd970X90 d-flex justify-content-center mt-4 mb-2">
+                                            <img src="media/Advertisement/Advertisement(970X90).png" alt="" title="" class="img-fluid" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </>
+                        <Entertaiment />
+                        <>
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <div class="DHomeAdd970X90 d-flex justify-content-center mt-4 mb-2">
+                                            <img src="media/Advertisement/Advertisement(970X90).png" alt="" title="" class="img-fluid" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </>
+                        <Sports />
+                        <>
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <div class="DHomeAdd970X90 d-flex justify-content-center mt-4 mb-2">
+                                            <img src="media/Advertisement/Advertisement(970X90).png" alt="" title="" class="img-fluid" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </>
+                        <section class="multiple-news-area">
+                            <div class="container">
+                                <div class="row">
+                                    <div className='col-lg-3'>
+                                        <Education />
+                                    </div>
+                                    <div className="col-lg-3">
+                                        <Health />
+                                    </div>
+                                    <div className="col-lg-3">
+                                        <ScienceTechnology />
+                                    </div>
+                                    <div className="col-lg-3">
+                                        <FactCheck />
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                        <>
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <div class="DHomeAdd970X90 d-flex justify-content-center mt-4 mb-2">
+                                            <img src="media/Advertisement/Advertisement(970X90).png" alt="" title="" class="img-fluid" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </>
                     </div>
 
 

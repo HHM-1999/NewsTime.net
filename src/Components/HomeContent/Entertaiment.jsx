@@ -9,11 +9,11 @@ export default function Entertaiment() {
     const [state2, setState2] = useState([])
     useEffect(() => {
         axios
-            .get(`${process.env.REACT_APP_API_URL}json/file/generateCategory5.json`)
+            .get(`${process.env.REACT_APP_API_URL}json/file/generateCategory7.json`)
             .then(({ data }) => {
                 if (data.data.length > 0) {
-                    setState(data.data[0]);
-                    setState2(data.data.slice(1, 5));
+                    setState(data.data.slice(0,3));
+                    setState2(data.data.slice(3,7));
                     setTimeout(function () {
                         lazyloaded = false
                         ForLazyLoaderImg(lazyloaded)
@@ -22,63 +22,72 @@ export default function Entertaiment() {
             });
     }, [])
     return (
-        <div className="col-lg-9 col-12">
-            <div className="SectionSBorder2">
-                <div className="SPSecTitle">
-                    <Link to="/entertainment" onClick={scrollTop}>
-                        <h2>এখন আনন্দ</h2>
-                    </Link>
-                </div>
-            </div>
-            <div className="DEntertainMent">
-                <div className="row">
-                    <div className="col-lg-8 col-12">
-                        <div className="DEntertainMentTop">
-                            <Link to={"/" + state.Slug + "/news/" + state.ContentID} onClick={scrollTop}>
-                                <div className="row">
-                                    <div className="col-lg-8 col-12">
-                                        <div className="DImgZoomBlock">
-                                            <picture><img src={process.env.REACT_APP_LAZYL_IMG} data-src={process.env.REACT_APP_IMG_Path + state.ImageBgPath} alt={state.ContentHeading} title={state.ContentHeading} /></picture>
-                                            {state.ShowVideo === 1 && <div className="card-video-iconTop"><i className="fa-solid fa-play"></i></div>}
-                                        </div>
-                                    </div>
-                                    <div className="col-lg-4 col-12">
-                                        <div className="Desc">
-                                            <h3 className="Title BGTitle">{state.ContentHeading}</h3>
-                                            <div className="Brief">
-                                                <p>{state.ContentBrief}</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </Link>
+        <section class="Entertainment-area-news">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="AllSecTitle">
+                            <a href="/entertainment">
+                                {/* <!-- <span class="RIghtBar"></span> --> */}
+                                <h2>বিনোদন</h2>
+                            </a>
                         </div>
                     </div>
-                    {state2.map((nc) => {
-                        return (
-                            <div className="col-lg-4 col-12 d-flex" key={nc.ContentID}>
-                                <div className="DEntertainMentList align-self-stretch">
-                                    <Link to={"/" + nc.Slug + "/news/" + nc.ContentID} onClick={scrollTop}>
-                                        <div className="row">
-                                            <div className="col-lg-12 col-sm-3 col-5">
-                                                <div className="DImgZoomBlock">
-                                                    <picture><img src={process.env.REACT_APP_LAZYL_IMG} data-src={process.env.REACT_APP_IMG_Path + nc.ImageSmPath} alt={nc.ContentHeading} title={nc.ContentHeading} /></picture>
-                                                    {nc.ShowVideo === 1 && <div className="card-video-iconTop"><i className="fa-solid fa-play"></i></div>}
-                                                </div>
+                </div>
+                <div class="Entertainment-news-wrapper-top">
+                    <div class="row gx-3">
+                        {state.map((nc) => {
+                            return (
+                                <div class="col-lg-4">
+                                    <div class="CommonLead4">
+                                        <Link to={"/" + nc.Slug + "/news/" + nc.ContentID} onClick={scrollTop}>
+                                            <picture>
+                                                <img src={process.env.REACT_APP_IMG_Path + nc.ImageBgPath} alt={nc.ContentHeading} title={nc.ContentHeading} className="img-fluid img100" />
+                                                {nc.ShowVideo === 1 && <div className="card-video-icon transition">  </div>}
+                                            </picture>
+                                            <div class="Desc">
+                                                <h3 class="Title">{nc.ContentHeading}</h3>
                                             </div>
-                                            <div className="col-lg-12 col-sm-9 col-7 textBorder2">
-                                                <div className="Desc">
-                                                    <h3 className="Title">{nc.ContentHeading}</h3>
-                                                </div>
+                                        </Link>
+                                    </div>
+                                </div>
+                            )
+                        })}
+
+
+                    </div>
+                </div>
+                <div class="Entertainment-news-wrapper-bottom">
+                    <div class="row gx-3">
+                        {state2.map((nc)=>{
+                            return(
+                                <div class="col-lg-3 border-right-inner">
+                            <div class="Common-list-details">
+                                <Link to={"/" + nc.Slug + "/news/" + nc.ContentID} onClick={scrollTop}>
+                                    <div class="row">
+                                        <div class="col-5 col-md-12">
+                                        <picture>
+                                                <img src={process.env.REACT_APP_IMG_Path + nc.ImageBgPath} alt={nc.ContentHeading} title={nc.ContentHeading} className="img-fluid img100" />
+                                                {nc.ShowVideo === 1 && <div className="card-video-icon transition">  </div>}
+                                            </picture>
+                                        </div>
+                                        <div class="col-7 col-md-12">
+                                            <div class="Desc">
+                                                <h3 class="Title">{nc.ContentHeading}</h3>
                                             </div>
                                         </div>
-                                    </Link>
-                                </div>
+                                    </div>
+                                </Link>
                             </div>
-                        )
-                    })}
+                        </div>
+                            )
+                        })}
+                        
+
+
+                    </div>
                 </div>
             </div>
-        </div>
+        </section>
     )
 }

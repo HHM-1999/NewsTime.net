@@ -3,7 +3,7 @@ import axios from 'axios'
 import { Link } from 'react-router-dom'
 import { scrollTop} from '../AllFunctions'
 
-import BdMap from './BdMap'
+
  
 // var lazyloaded = false
 export default function DDivisionSearch() {
@@ -57,11 +57,7 @@ export default function DDivisionSearch() {
     return (
         <>
             <div className="SectionTitle"><h3><Link to="#"  onClick={scrollTop}><span className="ColorBox"></span>এক ক্লিকে বিভাগের খবর</Link></h3></div>
-            <section>
-                <div className="bangladesh-map">
-                    <BdMap />
-                </div>
-            </section>
+        
             <form onSubmit={getURL} >
                 <div className="form-group clearfix">
                     <div className="row">

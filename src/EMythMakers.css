@@ -2466,7 +2466,9 @@ a.close-search {
 .Entertainment-area-news .CommonLead4:hover .Title {
 	color: #1E88E5;
 }
-
+.Entertainment-news-wrapper-bottom .col-lg-3.border-right-inner:last-child{
+	border-right: none;
+}
 /* Tech Css Area */
 .Lifestyle-area-news {
 	margin: 50px 0;

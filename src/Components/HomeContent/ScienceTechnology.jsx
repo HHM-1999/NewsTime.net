@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 import { scrollTop, ForLazyLoaderImg } from '../AllFunctions'
 
 var lazyloaded = false
-export default function Health() {
+export default function ScienceTechnology() {
     const [edu, setEdu] = useState([])
     const [edu2, setEdu2] = useState([])
 
@@ -12,7 +12,7 @@ export default function Health() {
 
     useEffect(() => {
         axios
-            .get(`${process.env.REACT_APP_API_URL}json/file/generateCategory11.json`)
+            .get(`${process.env.REACT_APP_API_URL}json/file/generateCategory9.json`)
             .then(({ data }) => {
                 if (data.data.length > 0) {
                     setEdu(data.data[0]);
@@ -31,8 +31,8 @@ export default function Health() {
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="AllSecTitle">
-                            <a href="/health">
-                                <h2>স্বাস্থ্য</h2>
+                            <a href="/science-and-technology">
+                                <h2>বিজ্ঞান-প্রযুক্তি</h2>
                             </a>
                         </div>
                     </div>

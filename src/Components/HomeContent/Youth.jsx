@@ -5,81 +5,68 @@ import { scrollTop, ForLazyLoaderImg } from '../AllFunctions'
 
 var lazyloaded = false
 export default function Youth() {
-    const [news, setNews] = useState([])
     const [news2, setNews2] = useState([])
 
 
     useEffect(() => {
         axios
-            .get(`${process.env.REACT_APP_API_URL}json/file/generateSpecial2.json`)
+            .get(`${process.env.REACT_APP_API_URL}json/file/generateCategory12.json`)
             .then(({ data }) => {
-                setNews(data.data[0])
-                setNews2(data.data[1])
+                if (data.data.length > 0) {
+                setNews2(data.data.slice(0,5))
 
                 setTimeout(function () {
                     lazyloaded = false
                     ForLazyLoaderImg(lazyloaded)
                 }, 1000);
+            }
             })
     }, [])
     return (
         <>
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="AllSecTitle">
-                        <a href="#">
-
-                            <h2>নিউজটাইম স্পেশাল
-                            </h2>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="NewsTimeSpecial">
-                
-                <div class="NewsTimeSpecialBox">
-                    <Link to={"/" + news.Slug + "/news/" + news.ContentID} key={news.CategoryID} onClick={scrollTop}>
-                        <picture>
-                            <img src={process.env.REACT_APP_IMG_Path + news.ImageSmPath} alt={news.ContentHeading} title={news.ContentHeading} className="img-fluid img100" />
-                            {news.ShowVideo === 1 && <div className="card-video-icon big transition"> <i className="fa-solid fa-play"></i> </div>}
-                        </picture>
-                        <div class="Desc">
-                            <h3 class="Title">{news.ContentHeading}
-                            </h3>
-                            <div class="Brief">
-                                <p>{news.ContentBrief}</p>
-                            </div>
-                        </div>
-                    </Link>
-                </div>
-
-            </div>
-            <div className="DHomeTopLead">
-                <Link to={"/" + news2.Slug + "/news/" + news2.ContentID} onClick={scrollTop}>
-                    <div className="row">
-                        <div className="col-lg-6">
-                            <div className="DImgZoomBlock">
-                                <picture><img src={process.env.REACT_APP_LAZYL_IMG} data-src={process.env.REACT_APP_IMG_Path + news2.ImageBgPath} alt={news2.ContentHeading} title={news2.ContentHeading} className="img-fluid img100" />
-                                    {news2.ShowVideo === 1 && <div className="card-video-icon big transition"> <i className="fa-solid fa-play"></i> </div>}</picture>
-
-                            </div>
-                        </div>
-                        <div className="col-lg-6">
-                            <div className="Desc">
-                                {news2.ContentSubHeading == null  ?
-                                    <h1 className="Title"> {news2.ContentHeading}</h1> :
-                                    <h1 className="Title"> <span className="subheadTitle">{news2.ContentSubHeading}/</span>  {news2.ContentHeading}</h1>
-
-
-                                }
-                                
-                              
-                            </div>
+            <div class="col-lg-4 border-right-inner">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="AllSecTitle">
+                            <a href="/youth">
+                                {/* <!-- <span class="RIghtBar"></span> --> */}
+                                <h2>তারুণ্য</h2>
+                            </a>
                         </div>
                     </div>
-                </Link>
-            </div>
+                </div>
+                <div class="Common-list">
+                    {news2.map((nc)=>{
+                        return(
+                            <div class="CommonLeadList">
+                            <Link to={"/" + nc.Slug + "/news/" + nc.ContentID} onClick={scrollTop}>
+                                <div class="row">
+                                    <div class="col-lg-5 col-12">
+                                        <div class="">
+                                            {/* <picture>
+                                                <img class="img-fluid img100" src="<?php echo $sSiteURL; ?>media/imgAll/running-1716815350.jpg" alt="" title="">
+                                            </picture> */}
+                                            <picture>
+                                                        <img src={process.env.REACT_APP_IMG_Path + nc.ImageBgPath} alt={nc.ContentHeading} title={nc.ContentHeading} className="img-fluid img100" />
+                                                        {nc.ShowVideo === 1 && <div className="card-video-icon transition">  </div>}
+                                                    </picture>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-7 col-12 order-lg-first">
+                                        <div class="Desc">
+                                            <h2 class="Title FW700">{nc.ContentHeading}</h2>
+                                        </div>
+                                    </div>
+                                </div>
+                            </Link>
+                        </div>
+                        )
+                    })}
 
+                  
+                    
+                </div>
+            </div>
 
         </>
 
