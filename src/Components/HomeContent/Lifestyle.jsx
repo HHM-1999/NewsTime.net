@@ -11,10 +11,10 @@ export default function Lifestyle() {
 
     useEffect(() => {
         axios
-            .get(`${process.env.REACT_APP_API_URL}json/file/generateCategory11.json`)
+            .get(`${process.env.REACT_APP_API_URL}json/file/generateCategory8.json`)
             .then(({ data }) => {
 
-                setLifeStyle(data.data.slice(0, 1))
+                setLifeStyle(data.data[0])
                 setLifeStyle2(data.data.slice(1, 4))
 
                 setTimeout(function () {
@@ -27,79 +27,61 @@ export default function Lifestyle() {
     }, [])
     return (
         <>
-            <div className="container">
-                <div className="SectionTitle"><h3><Link to="/lifestyle"><span className="ColorBox"></span>লাইফস্টাইল</Link></h3></div>
-                <div className="DLifestyle">
-                    <div className="row">
-                        {lifeStyle.map((nc) => {
-                            return (
-                                <div className="col-lg-4 col-12 d-flex border-right-inner">
-                                    <div className="DLifestyleTop align-self-stretch ">
-                                        <Link to={"/" + nc.Slug + "/news/" + nc.ContentID} key={nc.ContentID} onClick={scrollTop}>
-                                            <div className="Imgresize">
-                                                <figure className="ImgViewer">
-                                                    <picture className="FixingRatio">
-                                                        <img src={process.env.REACT_APP_LAZYL_IMG} data-src={process.env.REACT_APP_IMG_Path + nc.ImageBgPath} alt={nc.ContentHeading} title={nc.ContentHeading} className="img100 ImgRatio" />
-                                                    </picture>
-                                                </figure>
-                                            </div>
-                                            <div className="Desc">
-                                                {/* <h3 className="Title">{nc.ContentHeading}</h3> */}
-                                                {nc.ContentSubHeading == null ?
-                                                    <h3 className="Title">{nc.ContentHeading} </h3> :
-                                                    <h3 className="Title"> <span className="subheadTitle">{nc.ContentSubHeading + " /"}</span> {nc.ContentHeading} </h3>
-                                                }
-
-                                            </div>
-                                        </Link>
-                                    </div>
-                                </div>
-                            )
-                        })}
-
-                        <div className="col-lg-8 col-12">
-                            <div className="DLifestyleTop2">
-                                <div className="row">
-                                    {lifeStyle2.map((nc) => {
-                                        return (
-                                            <div className="col-lg-4 col-sm-12 d-flex border-right-inner">
-                                                <div className="DLifestyleList align-self-stretch">
-                                                    <Link to={"/" + nc.Slug + "/news/" + nc.ContentID} key={nc.ContentID} onClick={scrollTop}>
-                                                        <div className="row">
-                                                            <div className="col-lg-12 col-5">
-                                                                <div className="Imgresize">
-                                                                    <figure className="ImgViewer">
-                                                                        <picture className="FixingRatio">
-                                                                            <img src={process.env.REACT_APP_LAZYL_IMG} data-src={process.env.REACT_APP_IMG_Path + nc.ImageSmPath} alt={nc.ContentHeading} title={nc.ContentHeading} className="img100 ImgRatio" />
-                                                                            {nc.ShowVideo === 1 && <div className="card-video-icon big transition"> <i className="fa-solid fa-play"></i> </div>}
-                                                                        </picture>
-                                                                    </figure>
-                                                                </div>
-                                                            </div>
-                                                            <div className="col-lg-12 col-7">
-                                                                <div className="Desc">
-                                                                    {/* <h3 className="Title">{nc.ContentHeading}</h3> */}
-                                                                    {nc.ContentSubHeading == null ?
-                                                                        <h3 className="Title">{nc.ContentHeading} </h3> :
-                                                                        <h3 className="Title"> <span className="subheadTitle">{nc.ContentSubHeading + " /"}</span> {nc.ContentHeading} </h3>
-                                                                    }
-
-                                                                    <div className="Brief">
-                                                                        <p>{nc.ContentBrief}</p>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </Link>
-                                                </div>
-                                            </div>
-                                        )
-                                    })}
-                                </div>
+            <div class="col-lg-8 col-12 border-right-inner">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="AllSecTitle">
+                            <Link to="/life">
+                                {/* <!-- <span class="RIghtBar"></span> --> */}
+                                <h2>জীবনযাপন</h2>
+                            </Link>
+                        </div>
+                    </div>
+                </div>
+                <div class="CommonLead2">
+                    <Link to={"/" + lifeStyle.Slug + "/news/" + lifeStyle.ContentID} onClick={scrollTop}>
+                        <div class="">
+                            <picture>
+                                <img src={process.env.REACT_APP_IMG_Path + lifeStyle.ImageBgPath} alt={lifeStyle.ContentHeading} title={lifeStyle.ContentHeading} className="img-fluid img100" />
+                                {lifeStyle.ShowVideo === 1 && <div className="card-video-icon transition">  </div>}
+                            </picture>
+                        </div>
+                        <div class="Desc">
+                            <h2 class="Title FW700"> {lifeStyle.ContentHeading}
+                            </h2>
+                            <div class="Brief">
+                                <p>{lifeStyle.ContentBrief} </p>
                             </div>
                         </div>
-
-
+                    </Link>
+                </div>
+                <div class="Common-list3">
+                    <div class="row gx-3">
+                        {lifeStyle2.map((nc)=>{
+                            return(
+                                <div class="col-lg-4">
+                                <div class="Common-list3-details">
+                                    <Link to={"/" + nc.Slug + "/news/" + nc.ContentID} onClick={scrollTop}>
+                                        <div class="row">
+                                            <div class="col-lg-12 col-5">
+                                                <picture>
+                                                    <img src={process.env.REACT_APP_IMG_Path + nc.ImageSmPath} alt={nc.ContentHeading} title={nc.ContentHeading} className="img-fluid img100" />
+                                                    {nc.ShowVideo === 1 && <div className="card-video-icon transition">  </div>}
+                                                </picture>
+                                            </div>
+                                            <div class="col-lg-12 col-7">
+                                                <div class="Desc">
+                                                    <h3 class="Title">{nc.ContentHeading}</h3>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </Link>
+                                </div>
+                            </div>
+                            )
+                        })}
+                       
+                      
                     </div>
                 </div>
             </div>

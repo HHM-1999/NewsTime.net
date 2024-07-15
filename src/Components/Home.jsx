@@ -39,6 +39,7 @@ import Entertaiment from './HomeContent/Entertaiment'
 import Education from './HomeContent/Education'
 import ScienceTechnology from './HomeContent/ScienceTechnology'
 import FactCheck from './HomeContent/FactCheck'
+import RaceGender from './HomeContent/RaceGender'
 
 var allComponentsLoaded = false
 export default function Home() {
@@ -227,6 +228,17 @@ export default function Home() {
                                 </div>
                             </div>
                         </>
+                        <section class="Lifestyle-area-news">
+                            <div class="container">
+                                <div class="CommonSecNews2-wrapper">
+                                    <div class="row">
+                                        <Lifestyle />
+                                        <RaceGender />
+
+                                    </div>
+                                </div>
+                                </div>
+                        </section>
                     </div>
 
 
