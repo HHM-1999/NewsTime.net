@@ -239,6 +239,18 @@ export default function Home() {
                                 </div>
                                 </div>
                         </section>
+                        <>
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <div class="DHomeAdd970X90 d-flex justify-content-center mt-4 mb-2">
+                                            <img src="media/Advertisement/Advertisement(970X90).png" alt="" title="" class="img-fluid" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </>
+                        <PhotoSection />
                     </div>
 
 
