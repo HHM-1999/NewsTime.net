@@ -9,7 +9,7 @@ import CategoryPopular from './CategoryPopular';
 import ErrorPage from '../ErrorPage';
 import DivisionDistricName from '../Country/DivisionDistricName';
 import CatLdJson from './CatLdJson';
-import LeadLatestNews from '../HomeContent/LeadNews';
+import LeadLatestNews from '../HomeContent/LeadLatestNews';
 // import RLoader from '../RLoader';
 // import RLoader from '../RLoader';
 
@@ -62,7 +62,7 @@ export default function Category() {
                         if (data.inner_category_content) {
                             // console.log(`${process.env.REACT_APP_API_URL}inner-category-content/${catID}/${LeadNewsLimit}`);
                             setcatLeadNews1(data.inner_category_content[0]);
-                            setcatLeadNews2(data.inner_category_content[1]);
+                            setcatLeadNews2(data.inner_category_content.slice(1, 3));
                             setcatLeadNews3(data.inner_category_content.slice(2, 5));
                             // leadNews position array ------ start
                             InnerSpecialContents = ``
@@ -132,158 +132,205 @@ export default function Category() {
     return (
         <>
             {catName ?
-                <main>
-                 
-                        <div className="container">
-                            <h2 className="DTitle">
-                                {/* <Link to={'/' + catName.Slug} onClick={scrollTop}> */}
-                                <Link to={+ '/'} onClick={scrollTop}>
-                                    <span className="DTitleInner"><span className="DTitleInnerBar"><span>{catName.CategoryName}</span></span></span>
-                                </Link>
-                                <DocumentTitle title={`${catName.CategoryName} | ${catName.CategoryName} সর্বশেষ খবর ::  দ্য নিউজ ২৪`} />
+                <main className='CategoryPageArea'>
+
+                    <div className="container">
+                        {/* <h2 className="DTitle">
+                          
+                            <Link to={+ '/'} onClick={scrollTop}>
+                                <span className="DTitleInner"><span className="DTitleInnerBar"><span>{catName.CategoryName}</span></span></span>
+                            </Link>
+                            <DocumentTitle title={`${catName.CategoryName} | ${catName.CategoryName} সর্বশেষ খবর ::  দ্য নিউজ ২৪`} />
+                            <CatLdJson CatNames={catName.CategoryName} CatNameSlug={catName.Slug} />
+                        </h2> */}
+                        <div class="CategoryPageTitleTop">
+                            <h2 class="CategoryPageTitle"><Link to={+ '/'} onClick={scrollTop}><span class="CategoryPageTitle">{catName.CategoryName}</span></Link>
+                                <DocumentTitle title={`${catName.CategoryName} | ${catName.CategoryName} সর্বশেষ খবর :: নিউজটাইম ডটনেট`} />
                                 <CatLdJson CatNames={catName.CategoryName} CatNameSlug={catName.Slug} />
                             </h2>
+                        </div>
 
-                            <section>
-                                <div className="row">
-                                    <div className="col-lg-9 col-sm-12 DBorderRight">
-                                        <>
-                                            {catSlug === 'country' && <DivisionDistricName />}
-                                        </>
-                                        <div className="row">
-                                            <div className="col-lg-8 col-12 d-flex">
-                                                <div className="DCatLeadTop">
+                        <section>
+                            <div className="row">
+                                <div className="col-lg-9 ">
+                                    <>
+                                        {catSlug === 'country' && <DivisionDistricName />}
+                                    </>
+                                    <div className="DcatLeadTopUp">
+                                        <div className="row gx-3">
+                                            <div class="col-lg-8 col-12 ">
+                                                <div class="DcatLeadTop">
                                                     {catLeadNews1 ?
                                                         <Link to={"/" + catLeadNews1.Slug + "/news/" + catLeadNews1.ContentID} onClick={scrollTop}>
-                                                            <div className="row">
-                                                                <div className="col-lg-8 col-12">
-                                                                    <div className="DImgZoomBlock">
-                                                                        <picture><img src={process.env.REACT_APP_LAZYL_IMG} data-src={process.env.REACT_APP_IMG_Path + catLeadNews1.ImageBgPath} alt={catLeadNews1.ContentHeading} title={catLeadNews1.ContentHeading} /></picture>
-                                                                        {catLeadNews1.ShowVideo === 1 && <div className="card-video-icon"><i className="fa-solid fa-play"></i></div>}
-                                                                    </div>
-                                                                </div>
-                                                                <div className="col-lg-4 col-12">
-                                                                    <div className="Desc">
-                                                                        <h3 className="Title BGTitle">{catLeadNews1.ContentHeading}</h3>
-                                                                        <div className="Brief">
-                                                                            <p>{catLeadNews1.ContentBrief}</p>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
+                                                            <div class="DImgZoomBlock">
+                                                                {/* {catLeadNews1.ImageBgPath ===null ?
+                                                                <picture><img src={process.env.REACT_APP_LAZYL_IMG} alt={catLeadNews1.ContentHeading} title={catLeadNews1.ContentHeading} /></picture> :
+                                                                <picture><img src={process.env.REACT_APP_IMG_Path + catLeadNews1.ImageBgPath} alt={catLeadNews1.ContentHeading} title={catLeadNews1.ContentHeading} /></picture> }  */}
+
+                                                                <picture><img src={process.env.REACT_APP_LAZYL_IMG}  data-src={process.env.REACT_APP_IMG_Path + catLeadNews1.ImageBgPath} alt={catLeadNews1.ContentHeading} title={catLeadNews1.ContentHeading} /></picture>
+
+                                                                {catLeadNews1.ShowVideo === 1 && <div className="card-video-icon"><i className="fa-solid fa-play"></i></div>}
+
+                                                            </div>
+                                                            <div class="Desc">
+                                                                {catLeadNews1.ContentSubHeading == null ?
+                                                                    <h1 class="Title">{catLeadNews1.ContentHeading}</h1> :
+                                                                    <h1 class="Title"> <span class="subHeading">{catLeadNews1.ContentSubHeading} /</span>{catLeadNews1.ContentHeading}</h1>
+                                                                }
                                                             </div>
                                                         </Link> : ""}
                                                 </div>
                                             </div>
-                                            <div className="col-lg-4 col-12 d-flex">
-                                                <div className="DCatTop2 align-self-stretch">
-                                                    {catLeadNews2 ?
-                                                        <Link to={"/" + catLeadNews2.Slug + "/news/" + catLeadNews2.ContentID} onClick={scrollTop}>
-                                                            <div className="row">
-                                                                <div className="col-lg-12 col-sm-4 col-5">
-                                                                    <div className="DImgZoomBlock">
-                                                                        <picture><img src={process.env.REACT_APP_LAZYL_IMG} data-src={process.env.REACT_APP_IMG_Path + catLeadNews2.ImageSmPath} alt={catLeadNews2.ContentHeading} title={catLeadNews2.ContentHeading} /></picture>
-                                                                        {catLeadNews2.ShowVideo === 1 && <div className="card-video-icon"><i className="fa-solid fa-play"></i></div>}
+
+
+                                            <div class="col-lg-4 col-12 ">
+                                                <div class="DcatLeadTop2">
+                                                    {catLeadNews2.map((nc) => {
+                                                        return (
+                                                            <Link to={"/" + nc.Slug + "/news/" + nc.ContentID} onClick={scrollTop}>
+                                                                <div class="row mb-4 DImgZoomBlock">
+                                                                    <div class="col-lg-12 col-5">
+                                                                        
+                                                                            {/* {
+                                                                                nc.ImageSmPath === null ?
+                                                                                    <picture><img src={process.env.REACT_APP_LAZYL_IMG} alt={nc.ContentHeading} title={nc.ContentHeading} /></picture> :
+                                                                                    <picture><img src={process.env.REACT_APP_IMG_Path + nc.ImageSmPath} alt={nc.ContentHeading} title={nc.ContentHeading} /></picture>
+                                                                            } */}
+                                                                             <picture><img src={process.env.REACT_APP_LAZYL_IMG}  data-src={process.env.REACT_APP_IMG_Path + nc.ImageBgPath} alt={nc.ContentHeading} title={nc.ContentHeading} /></picture>
+                                                                            {nc.ShowVideo === 1 && <div className="card-video-icon"><i className="fa-solid fa-play"></i></div>}
+                                                                      
+                                                                    </div>
+                                                                    <div class="col-lg-12 col-7">
+                                                                        <div class="Desc ">
+                                                                            {nc.ContentSubHeading == null ?
+                                                                                <h3 class="Title">{nc.ContentHeading}</h3> :
+                                                                                <h3 class="Title"> <span class="subHeading">{nc.ContentSubHeading} /</span>{nc.ContentHeading}</h3>
+                                                                            }
+                                                                            {/* <h3 class="Title">{nc.ContentHeading}</h3> */}
+                                                                        </div>
                                                                     </div>
                                                                 </div>
-                                                                <div className="col-lg-12 col-sm-8 col-7">
-                                                                    <div className="Desc">
-                                                                        <h3 className="Title">{catLeadNews2.ContentHeading}</h3>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </Link> : ""}
+                                                            </Link>
+                                                        )
+                                                    })}
                                                 </div>
-                                            </div>
-                                        </div>
-                                        <div className="DCatTop3">
-                                            <div className="row">
-                                                {catLeadNews3.map((nc) => {
-                                                    return (
-                                                        <div className="col-lg-4 col-12 d-flex" key={nc.ContentID}>
-                                                            <div className="DCatTop3tList align-self-stretch">
-                                                                <Link to={"/" + nc.Slug + "/news/" + nc.ContentID} onClick={scrollTop}>
-                                                                    <div className="row">
-                                                                        <div className="col-lg-12 col-sm-4 col-5">
-                                                                            <div className="DImgZoomBlock">
-                                                                                <picture><img src={process.env.REACT_APP_LAZYL_IMG} data-src={process.env.REACT_APP_IMG_Path + nc.ImageSmPath} alt={nc.ContentHeading} title={nc.ContentHeading} /></picture>
-                                                                                {nc.ShowVideo === 1 && <div className="card-video-icon"><i className="fa-solid fa-play"></i></div>}
-                                                                            </div>
-                                                                        </div>
-                                                                        <div className="col-lg-12 col-sm-8 col-7">
-                                                                            <div className="Desc">
-                                                                                <h3 className="Title">{nc.ContentHeading}</h3>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                </Link>
-                                                            </div>
-                                                        </div>
-                                                    )
-                                                })}
+
                                             </div>
                                         </div>
                                     </div>
-                                    <div className="col-lg-3 col-sm-12">
-                                        <div className="DRightSideAdd d-flex justify-content-center">
-                                            <Link to="/">
-                                                <img src="/media/Advertisement/Advertisement(300X90).png" alt="Advertisement" title="Advertisement" />
-                                            </Link>
+
+                                    <div class="DCatLeadTop3">
+                                        <div class="row gx-3">
+                                            {catLeadNews3.map((nc) => {
+                                                return (<div class="col-lg-4 d-flex">
+                                                    <div class="DCatLeadTopList3">
+                                                        <Link to={"/" + nc.Slug + "/news/" + nc.ContentID} onClick={scrollTop}>
+                                                            <div class="row">
+                                                                <div class="col-lg-12 col-5">
+                                                                    {nc.ImageSmPath === null ?
+                                                                        <picture><img src={process.env.REACT_APP_LAZYL_IMG} alt={nc.ContentHeading} title={nc.ContentHeading} /></picture>
+                                                                        :
+                                                                        <picture><img src={process.env.REACT_APP_IMG_Path + nc.ImageSmPath} alt={nc.ContentHeading} title={nc.ContentHeading} /></picture>
+
+
+                                                                    }
+
+                                                                    {nc.ShowVideo === 1 && <div className="card-video-icon"><i className="fa-solid fa-play"></i></div>}
+                                                                </div>
+                                                                <div class="col-lg-12 col-7">
+                                                                    <div class="Desc">
+                                                                        <h3 class="Title">{nc.ContentHeading}</h3>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </Link>
+                                                    </div>
+                                                </div>)
+                                            })}
+                                            {/* <div class="col-lg-4 d-flex">
+                                    <div class="DCatLeadTopList3">
+                                        <a href="#">
+                                            <div class="row">
+                                                <div class="col-lg-12 col-5">
+                                                    <picture>
+                                                        <img class="img-fluid img100"
+                                                            src="<?php echo $sSiteURL; ?>media/imgAll/bnozir-db-1717670271.jpg"
+                                                            alt="" title="">
+                                                    </picture>
+                                                </div>
+                                                <div class="col-lg-12 col-7">
+                                                    <div class="Desc">
+                                                        <h3 class="Title">বেনজীর আহমেদকে ২৩ জুন দুদকে তলব</h3>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div> */}
+
+
                                         </div>
-                                        <LeadLatestNews />
                                     </div>
                                 </div>
-                            </section>
-
-                            <div className="DBannerAdd d-flex justify-content-center">
-                                <Link to="/">
-                                    <img src="/media/Advertisement/Advertisement(970X90).png" alt="Advertisement" title="Advertisement"
-                                        className="img-fluid img100" />
-                                </Link>
+                                <div className="col-lg-3 col-sm-12">
+                                    <div className="DRightSideAdd d-flex justify-content-center">
+                                        <Link to="/">
+                                            <img src="/media/Advertisement/Advertisement(300X90).png" alt="Advertisement" title="Advertisement" />
+                                        </Link>
+                                    </div>
+                                    <LeadLatestNews />
+                                </div>
                             </div>
+                        </section>
 
-                            <section>
-                                <div className="row">
-                                    <div className="col-lg-9 col-sm-12 mt-4 BorderRight">
-                                        <h2 className="LatestNewsH ">{catName.CategoryName} বিভাগের সব খবর</h2>
-                                        <section className="DCatNewsListArea">
-                                            <div className="row">
-                                                {catNewsMore.map((nc) => {
-                                                    return (
-                                                        <div className="col-lg-6 col-12 d-flex" key={nc.ContentID}>
-                                                            <div className="DCatNewsList align-self-stretch">
-                                                                <Link to={"/" + catSlug + "/news/" + nc.ContentID} onClick={scrollTop}>
-                                                                    <div className="row">
-                                                                        <div className="col-lg-5 col-sm-4 col-5">
-                                                                            <div className="DImgZoomBlock">
-                                                                                <picture><img src={process.env.REACT_APP_LAZYL_IMG} data-src={process.env.REACT_APP_IMG_Path + nc.ImageSmPath} alt={nc.ContentHeading} title={nc.ContentHeading} /></picture>
-                                                                                {nc.ShowVideo === 1 && <div className="card-video-icon"><i className="fa-solid fa-play"></i></div>}
-                                                                            </div>
-                                                                        </div>
-                                                                        <div className="col-lg-7 col-sm-8 col-7">
-                                                                            <div className="Desc">
-                                                                                <h3 className="Title">{nc.ContentHeading}</h3>
-                                                                            </div>
+                        <div className="DBannerAdd d-flex justify-content-center">
+                            <Link to="/">
+                                <img src="/media/Advertisement/Advertisement(970X90).png" alt="Advertisement" title="Advertisement"
+                                    className="img-fluid img100" />
+                            </Link>
+                        </div>
+
+                        {/* <section>
+                            <div className="row">
+                                <div className="col-lg-9 col-sm-12 mt-4 BorderRight">
+                                    <h2 className="LatestNewsH ">{catName.CategoryName} বিভাগের সব খবর</h2>
+                                    <section className="DCatNewsListArea">
+                                        <div className="row">
+                                            {catNewsMore.map((nc) => {
+                                                return (
+                                                    <div className="col-lg-6 col-12 d-flex" key={nc.ContentID}>
+                                                        <div className="DCatNewsList align-self-stretch">
+                                                            <Link to={"/" + catSlug + "/news/" + nc.ContentID} onClick={scrollTop}>
+                                                                <div className="row">
+                                                                    <div className="col-lg-5 col-sm-4 col-5">
+                                                                        <div className="DImgZoomBlock">
+                                                                            <picture><img src={process.env.REACT_APP_LAZYL_IMG} data-src={process.env.REACT_APP_IMG_Path + nc.ImageSmPath} alt={nc.ContentHeading} title={nc.ContentHeading} /></picture>
+                                                                            {nc.ShowVideo === 1 && <div className="card-video-icon"><i className="fa-solid fa-play"></i></div>}
                                                                         </div>
                                                                     </div>
-                                                                </Link>
-                                                            </div>
+                                                                    <div className="col-lg-7 col-sm-8 col-7">
+                                                                        <div className="Desc">
+                                                                            <h3 className="Title">{nc.ContentHeading}</h3>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </Link>
                                                         </div>
-                                                    )
-                                                })}
-                                            </div>
-                                        </section>
-                                        {showMore ?
-                                            <div id="btnDiv" className="text-center mt-4 mb-4"><button id="ajax-more-btn" className="btn btn-lg btn-block ButtonBG" onClick={toggleButtonState}>আরো পড়ুন</button></div>
-                                            : false}
-                                    </div>
-                                    <div className="col-lg-3 col-sm-12">
-                                        <CategoryPopular catLatest={catLatest} catSlug={catSlug} />
-                                    </div>
+                                                    </div>
+                                                )
+                                            })}
+                                        </div>
+                                    </section>
+                                    {showMore ?
+                                        <div id="btnDiv" className="text-center mt-4 mb-4"><button id="ajax-more-btn" className="btn btn-lg btn-block ButtonBG" onClick={toggleButtonState}>আরো পড়ুন</button></div>
+                                        : false}
                                 </div>
-                            </section>
+                              
+                            </div>
+                        </section> */}
 
-                        </div>
-                   
+                    </div>
+
                 </main>
                 : <ErrorPage />}
         </>

@@ -36,6 +36,9 @@ export default function MainRouterLink() {
             <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/search/:searchSlug" element={<SearchResult />} />
+            <Route path="/:catSlug" element={<Category />} />
+            <Route path="/divisions/:divisionSlug" element={<DivisionSlug />} />
+            <Route path="/*" element={<ErrorPage />} />
                 {/* <Route path="/" element={<Home />} />
                 <Route path="/aboutUs" element={<AboutUs />} />
 
@@ -52,7 +55,6 @@ export default function MainRouterLink() {
                 <Route path="/video" element={<VideoGallery />} />
                 <Route path="/video/cat/:vdoSlug" element={<VideoCategory />} />
                 <Route path="/video/show/:vdoID" element={<VideoDetails />} />
-                <Route path="/divisions/:divisionSlug" element={<DivisionSlug />} />
                 <Route path="/divisions/:divisionSlug/:dristrictSlug" element={<DistrictSlug />} />
                 <Route path="/photo-feature" element={<CategoryPhotoFeature />} />
                 <Route path="/photo-feature/news/:photoID" element={<DetailsPhotoFeature />} />

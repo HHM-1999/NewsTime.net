@@ -11,8 +11,8 @@ export default function DivisionDistricName() {
                         <div className="text-center">
                             <ul className="nav">
                                 <li className="dropdown">
-                                    <Link onClick={scrollTop} to="/divisions/dhaka" className="dropdown-toggle" data-toggle="dropdown disable" role="button" aria-haspopup="true" aria-expanded="false">ঢাকা</Link>
-                                    <ul className="dropdown-menu">
+                                    <Link onClick={scrollTop} to="/divisions/dhaka">ঢাকা</Link>
+                                    {/* <ul className="dropdown-menu">
                                         <Link onClick={scrollTop} className="dropdown-item" to="/divisions/dhaka/kishoreganj">কিশোরগঞ্জ</Link>
                                         <Link onClick={scrollTop} className="dropdown-item" to="/divisions/dhaka/gazipur">গাজীপুর</Link>
                                         <Link onClick={scrollTop} className="dropdown-item" to="/divisions/dhaka/gopalganj">গোপালগঞ্জ</Link>
@@ -26,11 +26,12 @@ export default function DivisionDistricName() {
                                         <Link onClick={scrollTop} className="dropdown-item" to="/divisions/dhaka/munshiganj">মুন্সিগঞ্জ</Link>
                                         <Link onClick={scrollTop} className="dropdown-item" to="/divisions/dhaka/rajbari">রাজবাড়ী</Link>
                                         <Link onClick={scrollTop} className="dropdown-item" to="/divisions/dhaka/shariatpur">শরীয়তপুর</Link>
-                                    </ul>
+                                        // className="dropdown-toggle" data-toggle="dropdown disable" role="button" aria-haspopup="true" aria-expanded="false"
+                                    </ul> */}
                                 </li>
                                 <li className="dropdown">
-                                    <Link onClick={scrollTop} to="/divisions/chattogram" className="dropdown-toggle" data-toggle="dropdown disable" role="button" aria-haspopup="true" aria-expanded="false">চট্টগ্রাম</Link>
-                                    <ul className="dropdown-menu">
+                                    <Link onClick={scrollTop} to="/divisions/chattogram" >চট্টগ্রাম</Link>
+                                    {/* <ul className="dropdown-menu">
                                         <Link onClick={scrollTop} className="dropdown-item" to="/divisions/chattogram/coxsbazar">কক্সবাজার</Link>
                                         <Link onClick={scrollTop} className="dropdown-item" to="/divisions/chattogram/cumilla">কুমিল্লা</Link>
                                         <Link onClick={scrollTop} className="dropdown-item" to="/divisions/chattogram/khagrachhari">খাগড়াছড়ি</Link>
@@ -42,22 +43,22 @@ export default function DivisionDistricName() {
                                         <Link onClick={scrollTop} className="dropdown-item" to="/divisions/chattogram/brahmanbaria">ব্রাহ্মণবাড়িয়া</Link>
                                         <Link onClick={scrollTop} className="dropdown-item" to="/divisions/chattogram/rangamati">রাঙামাটি</Link>
                                         <Link onClick={scrollTop} className="dropdown-item" to="/divisions/chattogram/lakshmipur">লক্ষ্মীপুর</Link>
-                                    </ul>
+                                    </ul> */}
                                 </li>
                                 <li className="dropdown">
-                                    <Link onClick={scrollTop} to="/divisions/barishal" className="dropdown-toggle" data-toggle="dropdown disable" role="button" aria-haspopup="true" aria-expanded="false">বরিশাল</Link>
-                                    <ul className="dropdown-menu">
+                                    <Link onClick={scrollTop} to="/divisions/barishal">বরিশাল</Link>
+                                    {/* <ul className="dropdown-menu">
                                         <Link onClick={scrollTop} className="dropdown-item" to="/divisions/barishal/jhalokati">ঝালকাঠী</Link>
                                         <Link onClick={scrollTop} className="dropdown-item" to="/divisions/barishal/patuakhali">পটুয়াখালি</Link>
                                         <Link onClick={scrollTop} className="dropdown-item" to="/divisions/barishal/pirojpur">পিরোজপুর</Link>
                                         <Link onClick={scrollTop} className="dropdown-item" to="/divisions/barishal/barguna">বরগুনা</Link>
                                         <Link onClick={scrollTop} className="dropdown-item" to="/divisions/barishal/barishal">বরিশাল</Link>
                                         <Link onClick={scrollTop} className="dropdown-item" to="/divisions/barishal/bhola">ভোলা</Link>
-                                    </ul>
+                                    </ul> */}
                                 </li>
                                 <li className="dropdown">
-                                    <Link onClick={scrollTop} to="/divisions/khulna" className="dropdown-toggle" data-toggle="dropdown disable" role="button" aria-haspopup="true" aria-expanded="false">খুলনা</Link>
-                                    <ul className="dropdown-menu">
+                                    <Link onClick={scrollTop} to="/divisions/khulna">খুলনা</Link>
+                                    {/* <ul className="dropdown-menu">
                                         <Link onClick={scrollTop} className="dropdown-item" to="/divisions/khulna/kushtia">কুষ্টিয়া</Link>
                                         <Link onClick={scrollTop} className="dropdown-item" to="/divisions/khulna/khulna">খুলনা</Link>
                                         <Link onClick={scrollTop} className="dropdown-item" to="/divisions/khulna/chuadanga">চুয়াডাঙ্গা</Link>
@@ -68,11 +69,11 @@ export default function DivisionDistricName() {
                                         <Link onClick={scrollTop} className="dropdown-item" to="/divisions/khulna/meherpur">মেহেরপুর</Link>
                                         <Link onClick={scrollTop} className="dropdown-item" to="/divisions/khulna/jashore">যশোর</Link>
                                         <Link onClick={scrollTop} className="dropdown-item" to="/divisions/khulna/satkhira">সাতক্ষীরা</Link>
-                                    </ul>
+                                    </ul> */}
                                 </li>
                                 <li className="dropdown">
-                                    <Link onClick={scrollTop} to="/divisions/rajshahi" className="dropdown-toggle" data-toggle="dropdown disable" role="button" aria-haspopup="true" aria-expanded="false">রাজশাহী</Link>
-                                    <ul className="dropdown-menu">
+                                    <Link onClick={scrollTop} to="/divisions/rajshahi">রাজশাহী</Link>
+                                    {/* <ul className="dropdown-menu">
                                         <Link onClick={scrollTop} className="dropdown-item" to="/divisions/rajshahi/chapainawabganj">চাঁপাইনবাবগঞ্জ</Link>
                                         <Link onClick={scrollTop} className="dropdown-item" to="/divisions/rajshahi/joypurhat">জয়পুরহাট</Link>
                                         <Link onClick={scrollTop} className="dropdown-item" to="/divisions/rajshahi/naogaon">নওগাঁ</Link>
@@ -81,20 +82,20 @@ export default function DivisionDistricName() {
                                         <Link onClick={scrollTop} className="dropdown-item" to="/divisions/rajshahi/bogura">বগুড়া</Link>
                                         <Link onClick={scrollTop} className="dropdown-item" to="/divisions/rajshahi/rajshahi">রাজশাহী</Link>
                                         <Link onClick={scrollTop} className="dropdown-item" to="/divisions/rajshahi/sirajganj">সিরাজগঞ্জ</Link>
-                                    </ul>
+                                    </ul> */}
                                 </li>
                                 <li className="dropdown">
-                                    <Link onClick={scrollTop} to="/divisions/sylhet" className="dropdown-toggle" data-toggle="dropdown disable" role="button" aria-haspopup="true" aria-expanded="false">সিলেট</Link>
-                                    <ul className="dropdown-menu">
+                                    <Link onClick={scrollTop} to="/divisions/sylhet">সিলেট</Link>
+                                    {/* <ul className="dropdown-menu">
                                         <Link onClick={scrollTop} className="dropdown-item" to="/divisions/sylhet/maulvibazar">মৌলভীবাজার</Link>
                                         <Link onClick={scrollTop} className="dropdown-item" to="/divisions/sylhet/sylhet">সিলেট</Link>
                                         <Link onClick={scrollTop} className="dropdown-item" to="/divisions/sylhet/sunamganj">সুনামগঞ্জ</Link>
                                         <Link onClick={scrollTop} className="dropdown-item" to="/divisions/sylhet/habiganj">হবিগঞ্জ</Link>
-                                    </ul>
+                                    </ul> */}
                                 </li>
                                 <li className="dropdown">
-                                    <Link onClick={scrollTop} to="/divisions/rangpur" className="dropdown-toggle" data-toggle="dropdown disable" role="button" aria-haspopup="true" aria-expanded="false">রংপুর</Link>
-                                    <ul className="dropdown-menu">
+                                    <Link onClick={scrollTop} to="/divisions/rangpur">রংপুর</Link>
+                                    {/* <ul className="dropdown-menu">
                                         <Link onClick={scrollTop} className="dropdown-item" to="/divisions/rangpur/kurigram">কুড়িগ্রাম</Link>
                                         <Link onClick={scrollTop} className="dropdown-item" to="/divisions/rangpur/gaibandha">গাইবান্ধা</Link>
                                         <Link onClick={scrollTop} className="dropdown-item" to="/divisions/rangpur/thakurgaon">ঠাকুরগাঁও</Link>
@@ -103,16 +104,16 @@ export default function DivisionDistricName() {
                                         <Link onClick={scrollTop} className="dropdown-item" to="/divisions/rangpur/panchagarh">পঞ্চগড়</Link>
                                         <Link onClick={scrollTop} className="dropdown-item" to="/divisions/rangpur/rangpur">রংপুর</Link>
                                         <Link onClick={scrollTop} className="dropdown-item" to="/divisions/rangpur/lalmonirhat">লালমনিরহাট</Link>
-                                    </ul>
+                                    </ul> */}
                                 </li>
                                 <li className="dropdown">
-                                    <Link onClick={scrollTop} to="/divisions/mymensingh" className="dropdown-toggle" data-toggle="dropdown disable" role="button" aria-haspopup="true" aria-expanded="false">ময়মনসিংহ</Link>
-                                    <ul className="dropdown-menu">
+                                    <Link onClick={scrollTop} to="/divisions/mymensingh">ময়মনসিংহ</Link>
+                                    {/* <ul className="dropdown-menu">
                                         <Link onClick={scrollTop} className="dropdown-item" to="/divisions/mymensingh/jamalpur">জামালপুর</Link>
                                         <Link onClick={scrollTop} className="dropdown-item" to="/divisions/mymensingh/netrokona">নেত্রকোনা</Link>
                                         <Link onClick={scrollTop} className="dropdown-item" to="/divisions/mymensingh/mymensingh">ময়মনসিংহ</Link>
                                         <Link onClick={scrollTop} className="dropdown-item" to="/divisions/mymensingh/sherpur">শেরপুর</Link>
-                                    </ul>
+                                    </ul> */}
                                 </li>
                             </ul>
                         </div>

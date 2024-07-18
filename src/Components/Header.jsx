@@ -609,7 +609,19 @@ export default function Header() {
 
                                                 </ul>
                                             </li>
-                                            <li class="nav-item"><a class="nav-link" href="#">আন্তর্জাতিক</a></li>
+                                            {/* <li class="nav-item"><a class="nav-link" href="#">আন্তর্জাতিক</a></li> */}
+                                            <li class="nav-item dropdown">
+                                                <a class="nav-link dropdown-toggle" href="category.php" data-bs-toggle="dropdown">
+                                                আন্তর্জাতিক </a>
+                                                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                                    <li><a class="dropdown-item" href="#">প্রাচ্য </a></li>
+                                                    <li><a class="dropdown-item" href="#"> মধ্যপ্রাচ্য </a>
+                                                    </li>
+                                                    <li><a class="dropdown-item" href="#">পাশ্চাত্য </a></li>
+                                                    <li><a class="dropdown-item" href="#">দক্ষিণ এশিয়া </a></li>
+                                                    <li><a class="dropdown-item" href="#">অন্যান্য</a></li>
+                                                </ul>
+                                            </li>
                                            
                                             <li class="nav-item dropdown">
                                                 <a class="nav-link dropdown-toggle" href="category.php" data-bs-toggle="dropdown">

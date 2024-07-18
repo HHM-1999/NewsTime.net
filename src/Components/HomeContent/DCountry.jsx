@@ -76,9 +76,9 @@ export default function DCountry() {
                                     <div class="row">
                                         <div class="col-lg-12">
                                             <div class="AllSecTitle">
-                                                <a href="/country">
+                                                <Link to="/country" onClick={scrollTop} >
                                                     <h2>দেশ</h2>
-                                                </a>
+                                                </Link>
                                             </div>
                                         </div>
                                     </div>

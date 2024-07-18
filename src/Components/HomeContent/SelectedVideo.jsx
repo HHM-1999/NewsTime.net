@@ -39,7 +39,7 @@ export default function SelectedVideo() {
                     <div class="LiveVideoImg">
                         <picture>
                             <img src={'https://img.youtube.com/vi/' + state.WebTVLinkCode + '/0.jpg'} width={406} height={228} alt={state.WebTVHeading} title={state.WebTVHeading} className="img100 ImgRatio" />
-                            <div class="card-video-icon transition"></div>
+                            <div class="card-video-icon "><i className="fa-solid fa-play"></i></div>
                         </picture>
 
                     </div>
