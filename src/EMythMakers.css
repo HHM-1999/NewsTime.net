@@ -4565,3 +4565,66 @@ span.CategoryPageTitle {
 		width: 100%;
 	}
 }
+
+/* //////// Archieve ///////  /*
+/* =====================archive ====================== */
+.archiveListNews {
+	background: #fff;
+	/* margin-top: 20px; */
+	padding: 20px 0;
+	border-top: 1px solid #e2e2e2;
+}
+
+.archiveSection .col-lg-6.col-sm-12:nth-child(1) .archiveListNews {
+	border-top: none;
+}
+
+.archiveSection .col-lg-6.col-sm-12:nth-child(2) .archiveListNews {
+	border-top: none;
+}
+
+.archiveListNews .col-sm-4 {
+	padding-right: 0;
+}
+
+.archiveListNews .col-sm-8 {
+	position: relative;
+}
+
+.archiveListNews h3 {
+	-webkit-line-clamp: 2;
+	font-size: 18px;
+	font-weight: 700;
+	line-height: 24px;
+}
+
+.archiveListNews p {
+	margin-top: 2px;
+	-webkit-line-clamp: 2;
+	font-size: 15px;
+	line-height: 20px;
+}
+
+.archiveListNews .pDate {
+	position: absolute;
+	bottom: 1px;
+	left: 12px;
+	color: #2a2a2a;
+}
+
+.archiveListNews .Desc {
+	padding: 5px 0;
+}
+
+.col-lg-6.col-sm-12:nth-child(1) .archiveListNews {
+	border-top: none;
+}
+
+.ButtonBG {
+	background-color: #0067D0;
+	color: #fff;
+}
+
+.ButtonBG:hover {
+	color: #ddd;
+}

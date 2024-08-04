@@ -1,5 +1,5 @@
 import React from 'react'
-import {  Routes, Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import Header from './Components/Header'
 import Footer from './Components/Footer'
 import Home from './Components/Home'
@@ -34,17 +34,18 @@ export default function MainRouterLink() {
         <div className="main-site">
             <Header />
             <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/search/:searchSlug" element={<SearchResult />} />
-            <Route path="/:catSlug" element={<Category />} />
-            <Route path="/divisions/:divisionSlug" element={<DivisionSlug />} />
-            <Route path="/*" element={<ErrorPage />} />
+                <Route path="/" element={<Home />} />
+                <Route path="/search/:searchSlug" element={<SearchResult />} />
+                <Route path="/:catSlug" element={<Category />} />
+                <Route path="/divisions/:divisionSlug" element={<DivisionSlug />} />
+                <Route path="/archives" element={<Archives />} />
+                <Route path="/*" element={<ErrorPage />} />
                 {/* <Route path="/" element={<Home />} />
                 <Route path="/aboutUs" element={<AboutUs />} />
 
                 <Route path="/live" element={<Live />} />
                 <Route path="/pollresult" element={<OnlinePollDetails />} />
-                <Route path="/archives" element={<Archives />} />
+                
                 <Route path="/:catSlug" element={<Category />} />
                 <Route path="/:catSlug/:subCatSlug" element={<SubCategory />} />
                 <Route path="/:catSlug/news/:id" element={<Details />} />

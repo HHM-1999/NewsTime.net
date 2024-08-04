@@ -1,9 +1,8 @@
-import React, { useEffect, useState } from 'react'
 import axios from 'axios'
-import { Link } from 'react-router-dom'
+import React, { useEffect, useState } from 'react'
 import DocumentTitle from 'react-document-title'
-import { scrollTop, banglaDateConvetar, ForLazyLoaderImg } from './AllFunctions'
-import { useLocation } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom'
+import { ForLazyLoaderImg, banglaDateConvetar, scrollTop } from './AllFunctions'
 // import RLoader from './RLoader'
 // import RLoader from './RLoader'
 
@@ -117,11 +116,16 @@ export default function Archives() {
 
     return (
         <main>
-          
+
             <div className="container">
-                <div className="TopHomeSection"></div>
-                <DocumentTitle title=" দ্য নিউজ ২৪ :: আর্কাইভস" />
-                <h2 className="DTitle"><Link to="/archives"><span className="DTitleInner"><span className="DTitleInnerBar"><span>আর্কাইভস</span></span></span></Link></h2>
+
+                <div class="CategoryPageTitleTop mt-5">
+                    <h2 class="CategoryPageTitle"><Link to="/archives" onClick={scrollTop}><span class="CategoryPageTitle">আর্কাইভস</span></Link>
+                        <DocumentTitle title=" নিউজটাইম ডটনেট :: আর্কাইভস" />
+
+                    </h2>
+                </div>
+
                 <div className="row">
                     <div className="col-sm-12 my-4">
                         <form className="form-inline" onSubmit={resultSubmit}>
@@ -197,8 +201,8 @@ export default function Archives() {
                         <button onClick={toggleButtonState} id="ajax-more-btn" className="btn btn-lg btn-block ButtonBG">আরো খবর...</button>
                     </div>}
             </div>
-      
-    
+
+
 
         </main>
     )
