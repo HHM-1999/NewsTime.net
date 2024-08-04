@@ -157,6 +157,7 @@ picture img {
 	object-fit: cover;
 	object-position: center;
 }
+
 .card-video-icon {
 	position: absolute;
 	top: 50%;
@@ -166,7 +167,8 @@ picture img {
 	height: 40px;
 	border-radius: 24px;
 	transform: translate(-50%, -50%);
-	background: #1E88E5;}
+	background: #1E88E5;
+}
 
 .card-video-icon i {
 	position: absolute;
@@ -181,7 +183,8 @@ picture img {
 	background-color: #1E88E5;
 	border: 1px solid #ddd;
 }
-.DImgZoomBlock{
+
+.DImgZoomBlock {
 	position: relative;
 }
 
@@ -345,7 +348,7 @@ span.publishTime {
 
 .DHeaderNav .navbar-light .navbar-nav .nav-link {
 	color: #1f1f1f;
-	padding: 12px 10px;
+	padding: 12px 8px;
 	font-size: 17px;
 	line-height: 22px;
 	font-weight: 600;
@@ -472,10 +475,15 @@ span.publishTime {
 /* .StickyLogo{
 	display:none;
 } */
-.StickyLogo img {
+/*.StickyLogo img {
 	width: 80px;
 	margin-right: 40px;
 	height: 60px;
+}*/
+.StickyLogo img {
+	width: 80px;
+	margin-right: 60px;
+	height: 55px;
 }
 
 .sticky .StickyLogo .pc-hide {
@@ -1341,7 +1349,8 @@ a.close-search {
 .NewsSeparator .col-lg-4.d-flex.border-right-inner:last-child {
 	border-right: none;
 }
-.NewsSeparator .col-lg-3.d-flex.border-right-inner:nth-last-child(3){
+
+.NewsSeparator .col-lg-3.d-flex.border-right-inner:nth-last-child(3) {
 	border-right: none;
 }
 
@@ -1445,6 +1454,7 @@ a.close-search {
 	font-size: 18px;
 	line-height: 26px;
 }
+
 /* newstimespecial */
 .DHomeTopLead {
 	background: #fff;
@@ -1467,13 +1477,14 @@ a.close-search {
 	color: #001D9B;
 
 }
-.DHomeTopLead .Desc .subheadTitle{
+
+.DHomeTopLead .Desc .subheadTitle {
 	font-size: 18px;
 	color: #0573E6;
 	font-weight: 600;
 }
 
-.subheadTitle{
+.subheadTitle {
 	font-size: 18px;
 	color: #0573E6;
 	font-weight: 600;
@@ -2093,7 +2104,9 @@ a.close-search {
 	text-align: center;
 	padding-top: 15px;
 }
-.owl-slider .owl-carousel .owl-nav.disabled, .owl-carousel .owl-dots.disabled {
+
+.owl-slider .owl-carousel .owl-nav.disabled,
+.owl-carousel .owl-dots.disabled {
 	display: block;
 }
 
@@ -2494,9 +2507,11 @@ a.close-search {
 .Entertainment-area-news .CommonLead4:hover .Title {
 	color: #1E88E5;
 }
-.Entertainment-news-wrapper-bottom .col-lg-3.border-right-inner:last-child{
+
+.Entertainment-news-wrapper-bottom .col-lg-3.border-right-inner:last-child {
 	border-right: none;
 }
+
 /*=======Division & District Page=======*/
 .DDivisionNav {
 	min-height: 30px !important;
@@ -2697,6 +2712,7 @@ a.close-search {
 	color: #979797;
 	border: none;
 }
+
 /* Tech Css Area */
 .Lifestyle-area-news {
 	margin: 50px 0;

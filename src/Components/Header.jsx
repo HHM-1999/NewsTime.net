@@ -1,8 +1,8 @@
-import React, { useEffect, useState } from 'react'
-import {  useNavigate } from 'react-router-dom'
-import {  banglaDateConvetar } from './AllFunctions'
 import { getDate, getMonth, getYear } from 'bangla-calendar';
 import moment from 'moment-hijri';
+import React, { useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { banglaDateConvetar } from './AllFunctions';
 const date1 = new Date();
 let bnDate = getDate(date1, { format: 'D' })
 let bnMonth = getMonth(date1, { format: 'MMMM' })
@@ -522,15 +522,15 @@ export default function Header() {
                                     <div class="serach-social-sec">
                                         <div class="row">
                                             <div class="col-lg-7">
-                                               
-                                                    <form onSubmit={handelSubmit} class="search" >
+
+                                                <form onSubmit={handelSubmit} class="search" >
                                                     <input type="text" name="q" class="searchTerm" placeholder="এখানে লিখুন..." />
                                                     <button type="submit" class="searchButton">
                                                         <i class="fa fa-search"></i>
                                                     </button>
-                                                    </form>
-                                                    
-                                                
+                                                </form>
+
+
                                             </div>
                                             <div class="col-lg-5 d-flex justify-content-end ps-0">
                                                 <div class="social-icon">
@@ -580,7 +580,7 @@ export default function Header() {
                                         <ul class="navbar-nav justify-content-center">
                                             <li class="nav-item"><a class="nav-link" href="index.php">হোম </a></li>
                                             <li class="nav-item dropdown">
-                                                <a class="nav-link dropdown-toggle" href="category.php" data-bs-toggle="dropdown">
+                                                <a class="nav-link dropdown-toggle" href="/bangladesh" data-bs-toggle="dropdown">
                                                     বাংলাদেশ </a>
                                                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                                                     <li><a class="dropdown-item" href="#"> জাতীয়</a></li>
@@ -600,7 +600,7 @@ export default function Header() {
                                                 </ul>
                                             </li>
                                             <li class="nav-item dropdown">
-                                                <a class="nav-link dropdown-toggle" href="category.php" data-bs-toggle="dropdown">
+                                                <a class="nav-link dropdown-toggle" href="/trade-finance" data-bs-toggle="dropdown">
                                                     অর্থ-বাণিজ্য </a>
                                                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                                                     <li><a class="dropdown-item" href="#"> অর্থনীতি </a></li>
@@ -611,8 +611,8 @@ export default function Header() {
                                             </li>
                                             {/* <li class="nav-item"><a class="nav-link" href="#">আন্তর্জাতিক</a></li> */}
                                             <li class="nav-item dropdown">
-                                                <a class="nav-link dropdown-toggle" href="category.php" data-bs-toggle="dropdown">
-                                                আন্তর্জাতিক </a>
+                                                <a class="nav-link dropdown-toggle" href="/international" data-bs-toggle="dropdown">
+                                                    আন্তর্জাতিক </a>
                                                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                                                     <li><a class="dropdown-item" href="#">প্রাচ্য </a></li>
                                                     <li><a class="dropdown-item" href="#"> মধ্যপ্রাচ্য </a>
@@ -622,9 +622,9 @@ export default function Header() {
                                                     <li><a class="dropdown-item" href="#">অন্যান্য</a></li>
                                                 </ul>
                                             </li>
-                                           
+
                                             <li class="nav-item dropdown">
-                                                <a class="nav-link dropdown-toggle" href="category.php" data-bs-toggle="dropdown">
+                                                <a class="nav-link dropdown-toggle" href="/sports" data-bs-toggle="dropdown">
                                                     খেলা </a>
                                                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                                                     <li><a class="dropdown-item" href="#">ক্রিকেট</a></li>
@@ -634,7 +634,7 @@ export default function Header() {
                                                 </ul>
                                             </li>
                                             <li class="nav-item dropdown">
-                                                <a class="nav-link dropdown-toggle" href="category.php" data-bs-toggle="dropdown">
+                                                <a class="nav-link dropdown-toggle" href="/entertainment" data-bs-toggle="dropdown">
                                                     বিনোদন </a>
                                                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                                                     <li><a class="dropdown-item" href="#">শোবিজ </a></li>
@@ -644,7 +644,7 @@ export default function Header() {
                                                 </ul>
                                             </li>
                                             <li class="nav-item dropdown">
-                                                <a class="nav-link dropdown-toggle" href="category.php" data-bs-toggle="dropdown">
+                                                <a class="nav-link dropdown-toggle" href="/education" data-bs-toggle="dropdown">
                                                     শিক্ষা</a>
                                                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                                                     <li><a class="dropdown-item" href="#">ক্যাম্পাস </a></li>
@@ -656,7 +656,7 @@ export default function Header() {
                                                 </ul>
                                             </li>
                                             <li class="nav-item dropdown">
-                                                <a class="nav-link dropdown-toggle" href="category.php" data-bs-toggle="dropdown">
+                                                <a class="nav-link dropdown-toggle" href="/health" data-bs-toggle="dropdown">
                                                     স্বাস্থ্য </a>
                                                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                                                     <li><a class="dropdown-item" href="#">শারীরিক স্বাস্থ্য</a></li>
@@ -669,7 +669,7 @@ export default function Header() {
                                                 </ul>
                                             </li>
                                             <li class="nav-item dropdown">
-                                                <a class="nav-link dropdown-toggle" href="category.php" data-bs-toggle="dropdown">
+                                                <a class="nav-link dropdown-toggle" href="/life" data-bs-toggle="dropdown">
                                                     জীবনযাপন </a>
                                                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                                                     <li><a class="dropdown-item" href="#">ঐতিহ্য </a></li>
@@ -696,7 +696,7 @@ export default function Header() {
                                                 </ul>
                                             </li>
                                             <li class="nav-item dropdown">
-                                                <a class="nav-link dropdown-toggle" href="category.php" data-bs-toggle="dropdown">
+                                                <a class="nav-link dropdown-toggle" href="/youth" data-bs-toggle="dropdown">
                                                     তারুণ্য </a>
                                                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                                                     <li><a class="dropdown-item" href="#">চাকরি-ক্যারিয়ার</a></li>
@@ -707,7 +707,7 @@ export default function Header() {
                                                 </ul>
                                             </li>
                                             <li class="nav-item dropdown">
-                                                <a class="nav-link dropdown-toggle" href="category.php" data-bs-toggle="dropdown">
+                                                <a class="nav-link dropdown-toggle" href="/science-and-technology" data-bs-toggle="dropdown">
                                                     বিজ্ঞান-প্রযুক্তি</a>
                                                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                                                     <li><a class="dropdown-item" href="#">বিজ্ঞান</a></li>
@@ -719,10 +719,10 @@ export default function Header() {
 
                                                 </ul>
                                             </li>
-                                            <li class="nav-item"><a class="nav-link" href="#">ফ্যাক্টচেক</a></li>
+                                            <li class="nav-item"><a class="nav-link" href="/factcheck">ফ্যাক্টচেক</a></li>
 
                                             <li class="nav-item dropdown">
-                                                <a class="nav-link dropdown-toggle" href="category.php" data-bs-toggle="dropdown">
+                                                <a class="nav-link dropdown-toggle" href="/race-gender" data-bs-toggle="dropdown">
                                                     রেস-জেন্ডার </a>
                                                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                                                     <li><a class="dropdown-item" href="#">নারী </a></li>
@@ -736,6 +736,7 @@ export default function Header() {
 
                                                 </ul>
                                             </li>
+                                            <li class="nav-item"><a class="nav-link" href="/archives"> আর্কাইভ</a></li>
                                         </ul>
                                     </div>
                                     {/* <!-- <li class="nav-item menu-search">
