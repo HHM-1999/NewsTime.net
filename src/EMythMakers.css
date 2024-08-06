@@ -305,6 +305,16 @@ span.publishTime {
 	font-size: 10px;
 }
 
+.ColorBox {
+	background-color: #001D9B;
+	margin-right: 13px;
+	margin-top: 14px;
+	display: inline-block;
+	height: 10px;
+	vertical-align: top;
+	width: 28px;
+}
+
 /* .HeaderTopSocial{display: flex;}
 .DSocialLink ul{padding:0;margin:0}
 .DSocialLink ul li{list-style:none;display:inline;}
@@ -1968,7 +1978,7 @@ a.close-search {
 
 .ErrorPage i.fa-solid.fa-4 {
 	font-size: 98px;
-	color: #F00000;
+	color: #001D9B;
 }
 
 .ErrorPage i.fa-solid.fa-0 {
@@ -4621,7 +4631,8 @@ span.CategoryPageTitle {
 }
 
 .ButtonBG {
-	background-color: #0067D0;
+	background-color: #001D9B;
+	;
 	color: #fff;
 }
 

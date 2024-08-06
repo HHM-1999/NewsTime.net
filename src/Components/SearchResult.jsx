@@ -1,10 +1,9 @@
-import React, { useEffect, useState } from 'react'
-import axios from 'axios'
-import DocumentTitle from 'react-document-title'
-import { Link, useParams } from 'react-router-dom'
-import { useNavigate } from "react-router-dom";
-import { scrollTop, banglaDateConvetar, ForLazyLoaderImg } from './AllFunctions'
-import LoadingGif from '../assets/media/common/loading.gif'
+import axios from 'axios';
+import React, { useEffect, useState } from 'react';
+import DocumentTitle from 'react-document-title';
+import { Link, useNavigate, useParams } from 'react-router-dom';
+import LoadingGif from '../assets/media/common/loading.gif';
+import { banglaDateConvetar, ForLazyLoaderImg, scrollTop } from './AllFunctions';
 var lazyloaded = false
 var showMore = true
 var formData = []
@@ -85,9 +84,9 @@ export default function SearchResult() {
                         </Link>
                         <DocumentTitle title="খুঁজুন | খুঁজুন সর্বশেষ খবর :: দ্য নিউজ ২৪" />
                     </h2> */}
-                    <div class="CategoryPageTitleTop mt-3 text-center">
-                        <h2 class="CategoryPageTitle"><a href={+ '/'}><span class="CategoryPageTitle">খুঁজুন</span></a>
-                        <DocumentTitle title="খুঁজুন | খুঁজুন সর্বশেষ খবর :: নিউজটাইম ডটনেট" />
+                    <div class="CategoryPageTitleTop mt-3 ">
+                        <h2 class="CategoryPageTitle"><a href={+ '/'}><span class="CategoryPageTitle"><span className='ColorBox'></span>খুঁজুন</span></a>
+                            <DocumentTitle title="খুঁজুন | খুঁজুন সর্বশেষ খবর :: নিউজটাইম ডটনেট" />
                         </h2>
                     </div>
 

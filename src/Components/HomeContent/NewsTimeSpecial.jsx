@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from 'react'
 import axios from 'axios'
+import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
-import { scrollTop, ForLazyLoaderImg } from '../AllFunctions'
+import { ForLazyLoaderImg, scrollTop } from '../AllFunctions'
 
 var lazyloaded = false
 export default function NewsTimeSpecial() {
@@ -27,7 +27,7 @@ export default function NewsTimeSpecial() {
             <div class="row">
                 <div class="col-lg-12">
                     <div class="AllSecTitle">
-                        <a href="#">
+                        <a href="/newstime-special">
 
                             <h2>নিউজটাইম স্পেশাল
                             </h2>
@@ -36,7 +36,7 @@ export default function NewsTimeSpecial() {
                 </div>
             </div>
             <div class="NewsTimeSpecial">
-                
+
                 <div class="NewsTimeSpecialBox">
                     <Link to={"/" + news.Slug + "/news/" + news.ContentID} key={news.CategoryID} onClick={scrollTop}>
                         <picture>
@@ -66,14 +66,14 @@ export default function NewsTimeSpecial() {
                         </div>
                         <div className="col-lg-6">
                             <div className="Desc">
-                                {news2.ContentSubHeading == null  ?
+                                {news2.ContentSubHeading == null ?
                                     <h1 className="Title"> {news2.ContentHeading}</h1> :
                                     <h1 className="Title"> <span className="subheadTitle">{news2.ContentSubHeading}/</span>  {news2.ContentHeading}</h1>
 
 
                                 }
-                                
-                              
+
+
                             </div>
                         </div>
                     </div>

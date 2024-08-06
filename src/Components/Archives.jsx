@@ -120,7 +120,7 @@ export default function Archives() {
             <div className="container">
 
                 <div class="CategoryPageTitleTop mt-5">
-                    <h2 class="CategoryPageTitle"><Link to="/archives" onClick={scrollTop}><span class="CategoryPageTitle">আর্কাইভস</span></Link>
+                    <h2 class="CategoryPageTitle"><Link to="/archives" onClick={scrollTop}><span class="CategoryPageTitle "><span className='ColorBox'></span>আর্কাইভস</span></Link>
                         <DocumentTitle title=" নিউজটাইম ডটনেট :: আর্কাইভস" />
 
                     </h2>

@@ -1,32 +1,13 @@
-import React from 'react'
-import { Routes, Route } from "react-router-dom";
-import Header from './Components/Header'
-import Footer from './Components/Footer'
-import Home from './Components/Home'
-import OnlinePollDetails from './Components/OnlinePollDetails';
-import Category from './Components/Category/Category';
-import SubCategory from './Components/Category/SubCategory';
-import Details from './Components/DetailsPage/Details';
-import ErrorPage from './Components/ErrorPage';
+import React from 'react';
+import { Route, Routes } from "react-router-dom";
 import Archives from './Components/Archives';
-import TagPage from './Components/Tags/TagPage';
-import AllTagList from './Components/Tags/AllTagList';
-import WritersPage from './Components/Writers/WritersPage';
-import AllWriters from './Components/Writers/AllWriters';
-import VideoGallery from './Components/Video/VideoGallery';
-import VideoCategory from './Components/Video/VideoCategory';
-import VideoDetails from './Components/Video/VideoDetails';
+import Category from './Components/Category/Category';
 import DivisionSlug from './Components/Country/DivisionSlug';
-import DistrictSlug from './Components/Country/DistrictSlug';
-import Live from './Components/Live';
-import CategoryPhotoFeature from './Components/Photo-features/CategoryPhotoFeature';
-import DetailsPhotoFeature from './Components/Photo-features/DetailsPhotoFeature';
+import ErrorPage from './Components/ErrorPage';
+import Footer from './Components/Footer';
+import Header from './Components/Header';
+import Home from './Components/Home';
 import SearchResult from './Components/SearchResult';
-import AboutUs from './Components/AboutUs';
-import PrivacyPolicy from './Components/Privacy-policy';
-import Terms from './Components/Terms'
-import AdvertisementPage from './Components/AdvertisementPage';
-import DPrayerTime from './Components/DPrayerTime';
 
 
 export default function MainRouterLink() {
@@ -39,6 +20,7 @@ export default function MainRouterLink() {
                 <Route path="/:catSlug" element={<Category />} />
                 <Route path="/divisions/:divisionSlug" element={<DivisionSlug />} />
                 <Route path="/archives" element={<Archives />} />
+                <Route path="/search/:searchSlug" element={<SearchResult />} />
                 <Route path="/*" element={<ErrorPage />} />
                 {/* <Route path="/" element={<Home />} />
                 <Route path="/aboutUs" element={<AboutUs />} />
@@ -59,7 +41,7 @@ export default function MainRouterLink() {
                 <Route path="/divisions/:divisionSlug/:dristrictSlug" element={<DistrictSlug />} />
                 <Route path="/photo-feature" element={<CategoryPhotoFeature />} />
                 <Route path="/photo-feature/news/:photoID" element={<DetailsPhotoFeature />} />
-                <Route path="/search/:searchSlug" element={<SearchResult />} />
+               
                 <Route path="/privacy-policy" element={<PrivacyPolicy />} />
                 <Route path="/terms-service" element={<Terms />} />
                 <Route path="/advertise" element={<AdvertisementPage />} />
