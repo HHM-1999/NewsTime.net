@@ -4,11 +4,16 @@ import Archives from './Components/Archives';
 import Category from './Components/Category/Category';
 import SubCategory from './Components/Category/SubCategory';
 import DivisionSlug from './Components/Country/DivisionSlug';
+import Details from './Components/DetailsPage/Details';
 import ErrorPage from './Components/ErrorPage';
 import Footer from './Components/Footer';
 import Header from './Components/Header';
 import Home from './Components/Home';
 import SearchResult from './Components/SearchResult';
+import AllTagList from './Components/Tags/AllTagList';
+import Tagpage from './Components/Tags/TagPage';
+import AllWriters from './Components/Writers/AllWriters';
+import WritersPage from './Components/Writers/WritersPage';
 
 
 export default function MainRouterLink() {
@@ -21,10 +26,15 @@ export default function MainRouterLink() {
                 <Route path="/:catSlug" element={<Category />} />
                 <Route path="/:catSlug/:subCatSlug" element={<SubCategory />} />
                 <Route path="/divisions/:divisionSlug" element={<DivisionSlug />} />
+                <Route path="/:catSlug/news/:id" element={<Details />} />
                 <Route path="/archives" element={<Archives />} />
                 <Route path="/search/:searchSlug" element={<SearchResult />} />
+                <Route path="/tags/:TagTitle" element={<Tagpage />} />
+                <Route path="/all_tags" element={<AllTagList />} />
+                <Route path="/writers/:WriterSlug" element={<WritersPage />} />
+                <Route path="/all_writers" element={<AllWriters />} />
                 <Route path="/*" element={<ErrorPage />} />
-                {/* <Route path="/" element={<Home />} />
+                {/* 
                 <Route path="/aboutUs" element={<AboutUs />} />
 
                 <Route path="/live" element={<Live />} />

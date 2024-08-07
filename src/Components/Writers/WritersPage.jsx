@@ -1,12 +1,11 @@
-import React, { useState, useEffect } from 'react'
-import { Link, useParams } from 'react-router-dom';
-import axios from 'axios'
-import { EmailShareButton, FacebookShareButton, LinkedinShareButton, TwitterShareButton, WhatsappShareButton } from "react-share";
-import { EmailIcon, FacebookIcon, LinkedinIcon, TwitterIcon, WhatsappIcon } from "react-share";
+import axios from 'axios';
+import React, { useEffect, useState } from 'react';
 import DocumentTitle from 'react-document-title';
-import { scrollTop, ForLazyLoaderImg } from '../AllFunctions'
+import { Link, useParams } from 'react-router-dom';
+import { EmailIcon, EmailShareButton, FacebookIcon, FacebookShareButton, LinkedinIcon, LinkedinShareButton, TwitterIcon, TwitterShareButton, WhatsappIcon, WhatsappShareButton } from "react-share";
+import { ForLazyLoaderImg, scrollTop } from '../AllFunctions';
 import ErrorPage from '../ErrorPage';
-import LeadLatestNews from '../HomeContent/LeadNews';
+import LeadLatestNews from '../HomeContent/LeadLatestNews';
 // import Profile from '../../../src/assets/media/common/profile.png'
 
 var lazyloaded = false
