@@ -2,6 +2,7 @@ import React from 'react';
 import { Route, Routes } from "react-router-dom";
 import Archives from './Components/Archives';
 import Category from './Components/Category/Category';
+import SubCategory from './Components/Category/SubCategory';
 import DivisionSlug from './Components/Country/DivisionSlug';
 import ErrorPage from './Components/ErrorPage';
 import Footer from './Components/Footer';
@@ -18,6 +19,7 @@ export default function MainRouterLink() {
                 <Route path="/" element={<Home />} />
                 <Route path="/search/:searchSlug" element={<SearchResult />} />
                 <Route path="/:catSlug" element={<Category />} />
+                <Route path="/:catSlug/:subCatSlug" element={<SubCategory />} />
                 <Route path="/divisions/:divisionSlug" element={<DivisionSlug />} />
                 <Route path="/archives" element={<Archives />} />
                 <Route path="/search/:searchSlug" element={<SearchResult />} />

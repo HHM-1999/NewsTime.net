@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from 'react'
 import axios from 'axios'
+import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
-import { scrollTop, ForLazyLoaderImg } from '../AllFunctions'
+import { ForLazyLoaderImg, scrollTop } from '../AllFunctions'
 var lazyloaded = false
 export default function DCountry() {
     const [state, setState] = useState([])
@@ -15,7 +15,7 @@ export default function DCountry() {
             .then(({ data }) => {
                 setState(data.data[0])
                 setState2(data.data.slice(1, 4))
-                setState3(data.data.slice(4,7))
+                setState3(data.data.slice(4, 7))
                 setTimeout(function () {
                     lazyloaded = false
                     ForLazyLoaderImg(lazyloaded)
@@ -110,7 +110,7 @@ export default function DCountry() {
                                                         </select>
                                                     </div>
                                                     <div class="col-md-3 d-flex align-items-center justify-content-center">
-                                                        <button type="submit" name="btnSubmit" class="btn btn-danger searchCap btn-block d-flex" disabled={true} ><i class="fas fa-search"></i> খুঁজুন
+                                                        <button type="submit" name="btnSubmit" class="btn btn-danger searchCap btn-block d-flex" ><i class="fas fa-search"></i> খুঁজুন
                                                         </button>
                                                     </div>
                                                 </div>
@@ -171,7 +171,7 @@ export default function DCountry() {
                             </div>
                         </div>
                         <div class="col-lg-3">
-                        <div class="Common-list">
+                            <div class="Common-list">
                                 {state3.map((nc) => {
                                     return (
                                         <div class="CommonLeadList">
@@ -192,7 +192,7 @@ export default function DCountry() {
                                     )
                                 })}
                             </div>
-                    </div>
+                        </div>
                     </div>
                 </div >
             </section >

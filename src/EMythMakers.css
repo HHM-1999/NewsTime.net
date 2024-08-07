@@ -2630,8 +2630,13 @@ a.close-search {
 }
 
 .DivisionLeadNews .Desc .Title {
-	margin-top: 5px;
-	padding: 0 5px;
+	margin-top: 0px;
+	padding: 0px 0px;
+	display: -webkit-box;
+	-webkit-line-clamp: 2;
+	-webkit-box-orient: vertical;
+	overflow: hidden;
+	text-overflow: ellipsis;
 }
 
 .DivisionLeadNews:hover .Desc .Title {

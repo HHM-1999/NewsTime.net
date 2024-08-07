@@ -1,12 +1,11 @@
-import React, { useEffect, useState } from 'react'
-import axios from 'axios'
-import { Link, useParams } from "react-router-dom";
+import axios from 'axios';
+import React, { useEffect, useState } from 'react';
 import DocumentTitle from 'react-document-title';
-import { scrollTop, ForLazyLoaderImg } from '../AllFunctions'
-import DivisionDistricName from './DivisionDistricName';
+import { Link, useParams } from "react-router-dom";
+import { ForLazyLoaderImg, scrollTop } from '../AllFunctions';
 import ErrorPage from '../ErrorPage';
 // import LatestPopularNews from '../Category/LatestPopularNews';
-import LeadLatestNews from '../HomeContent/LeadNews';
+import LeadLatestNews from '../HomeContent/LeadLatestNews';
 // import RLoader from '../RLoader';
 // import RLoader from '../RLoader';
 var lazyloaded = false
@@ -28,7 +27,7 @@ export default function DivisionSlug() {
                     // setisLoading(false)
                     // setisLoading(false)
                     setDivisionName(data.districtContent[0].DivisionNameBn);
-                    setDivision(data.districtContent.slice(0,4));
+                    setDivision(data.districtContent.slice(0, 4));
                     setTimeout(function () {
                         lazyloaded = false
                         ForLazyLoaderImg(lazyloaded)
@@ -52,16 +51,16 @@ export default function DivisionSlug() {
         <>
             {division ?
                 <main>
-                 
+
                     <div className="container">
                         <div className="TopHomeSection"></div>
-                        <h2 className="DTitle">
+                        <h2 className="CategoryPageTitle mt-3 mb-3">
                             <DocumentTitle title={divisionName} />
-                            <Link to={+ '/'}><span className="DTitleInner"><span className="DTitleInnerBar"><span>{divisionName}</span></span></span></Link>
+                            <Link to={+ '/'}><span className="CategoryPageTitle"><span className="DTitleInnerBar"><span>{divisionName}</span></span></span></Link>
                         </h2>
                         <div className="row">
                             <div className="col-lg-9 col-sm-12 border-right-inner1">
-                                <DivisionDistricName />
+
                                 <div className="DivisionAllNews">
                                     <div className="row">
                                         {division.map((nc) => {
@@ -76,7 +75,7 @@ export default function DivisionSlug() {
                                                         {nc.content.map((nd, i) => {
                                                             return (
                                                                 <div className="DivisionBody">
-                                                                    {i === 0  ?
+                                                                    {i === 0 ?
                                                                         <div className="DivisionLeadNews">
                                                                             <Link to={"/" + nd.Slug + "/news/" + nd.ContentID} onClick={scrollTop}>
                                                                                 <div className="DImgBlock card-video-part">
@@ -109,14 +108,12 @@ export default function DivisionSlug() {
                                     </div>
                                 </div>
                             </div>
-                            <div className="col-lg-3 col-sm-12">
-                                <div className="MarginBottom30">
-                                    <LeadLatestNews />
-                                </div>
+                            <div className="col-lg-3 col-sm-12 mt-3">
+                                <LeadLatestNews />
                             </div>
                         </div>
-                    </div> 
-                    
+                    </div>
+
                 </main>
                 : <ErrorPage />}
         </>
