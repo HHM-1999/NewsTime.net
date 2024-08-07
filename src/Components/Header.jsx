@@ -713,9 +713,9 @@ export default function Header() {
                                                     <li><a class="dropdown-item" href="/science">বিজ্ঞান</a></li>
                                                     <li><a class="dropdown-item" href="/technology">প্রযুক্তি</a>
                                                     </li>
-                                                    <li><a class="dropdown-item" href="#">পরিবেশ</a>
+                                                    <li><a class="dropdown-item" href="/environment ">পরিবেশ</a>
                                                     </li>
-                                                    <li><a class="dropdown-item" href="#">অন্যান্য</a></li>
+                                                    <li><a class="dropdown-item" href="/ 	science-and-technology-other ">অন্যান্য</a></li>
 
                                                 </ul>
                                             </li>

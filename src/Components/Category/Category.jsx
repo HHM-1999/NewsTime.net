@@ -1,15 +1,14 @@
-import React, { useEffect, useState } from 'react'
-import { Link, useParams } from 'react-router-dom'
-import axios from 'axios'
+import axios from 'axios';
+import React, { useEffect, useState } from 'react';
 import DocumentTitle from "react-document-title";
-import { scrollTop, ForLazyLoaderImg } from '../AllFunctions'
+import { Link, useParams } from 'react-router-dom';
+import { ForLazyLoaderImg, scrollTop } from '../AllFunctions';
 // import LatestPopularNews from './LatestPopularNews';
 
-import CategoryPopular from './CategoryPopular';
-import ErrorPage from '../ErrorPage';
 import DivisionDistricName from '../Country/DivisionDistricName';
-import CatLdJson from './CatLdJson';
+import ErrorPage from '../ErrorPage';
 import LeadLatestNews from '../HomeContent/LeadLatestNews';
+import CatLdJson from './CatLdJson';
 // import RLoader from '../RLoader';
 // import RLoader from '../RLoader';
 
@@ -167,7 +166,7 @@ export default function Category() {
                                                                 <picture><img src={process.env.REACT_APP_LAZYL_IMG} alt={catLeadNews1.ContentHeading} title={catLeadNews1.ContentHeading} /></picture> :
                                                                 <picture><img src={process.env.REACT_APP_IMG_Path + catLeadNews1.ImageBgPath} alt={catLeadNews1.ContentHeading} title={catLeadNews1.ContentHeading} /></picture> }  */}
 
-                                                                <picture><img src={process.env.REACT_APP_LAZYL_IMG}  data-src={process.env.REACT_APP_IMG_Path + catLeadNews1.ImageBgPath} alt={catLeadNews1.ContentHeading} title={catLeadNews1.ContentHeading} /></picture>
+                                                                <picture><img src={process.env.REACT_APP_LAZYL_IMG} data-src={process.env.REACT_APP_IMG_Path + catLeadNews1.ImageBgPath} alt={catLeadNews1.ContentHeading} title={catLeadNews1.ContentHeading} /></picture>
 
                                                                 {catLeadNews1.ShowVideo === 1 && <div className="card-video-icon"><i className="fa-solid fa-play"></i></div>}
 
@@ -190,15 +189,15 @@ export default function Category() {
                                                             <Link to={"/" + nc.Slug + "/news/" + nc.ContentID} onClick={scrollTop}>
                                                                 <div class="row mb-4 DImgZoomBlock">
                                                                     <div class="col-lg-12 col-5">
-                                                                        
-                                                                            {/* {
+
+                                                                        {/* {
                                                                                 nc.ImageSmPath === null ?
                                                                                     <picture><img src={process.env.REACT_APP_LAZYL_IMG} alt={nc.ContentHeading} title={nc.ContentHeading} /></picture> :
                                                                                     <picture><img src={process.env.REACT_APP_IMG_Path + nc.ImageSmPath} alt={nc.ContentHeading} title={nc.ContentHeading} /></picture>
                                                                             } */}
-                                                                             <picture><img src={process.env.REACT_APP_LAZYL_IMG}  data-src={process.env.REACT_APP_IMG_Path + nc.ImageBgPath} alt={nc.ContentHeading} title={nc.ContentHeading} /></picture>
-                                                                            {nc.ShowVideo === 1 && <div className="card-video-icon"><i className="fa-solid fa-play"></i></div>}
-                                                                      
+                                                                        <picture><img src={process.env.REACT_APP_LAZYL_IMG} data-src={process.env.REACT_APP_IMG_Path + nc.ImageBgPath} alt={nc.ContentHeading} title={nc.ContentHeading} /></picture>
+                                                                        {nc.ShowVideo === 1 && <div className="card-video-icon"><i className="fa-solid fa-play"></i></div>}
+
                                                                     </div>
                                                                     <div class="col-lg-12 col-7">
                                                                         <div class="Desc ">
@@ -267,7 +266,12 @@ export default function Category() {
                                         </a>
                                     </div>
                                 </div> */}
-
+                                            <div className="DBannerAdd d-flex justify-content-center mt-4">
+                                                <Link to="/">
+                                                    <img src="/media/Advertisement/Advertisement(970X90).png" alt="Advertisement" title="Advertisement"
+                                                        className="img-fluid img100" />
+                                                </Link>
+                                            </div>
 
                                         </div>
                                     </div>
@@ -275,25 +279,27 @@ export default function Category() {
                                 <div className="col-lg-3 col-sm-12">
                                     <div className="DRightSideAdd d-flex justify-content-center">
                                         <Link to="/">
-                                            <img src="/media/Advertisement/Advertisement(300X90).png" alt="Advertisement" title="Advertisement" />
+                                            <img src="/media/Advertisement/Advertisement-(300X250).png" alt="Advertisement" title="Advertisement" />
                                         </Link>
                                     </div>
                                     <LeadLatestNews />
+
                                 </div>
                             </div>
                         </section>
 
-                        <div className="DBannerAdd d-flex justify-content-center">
-                            <Link to="/">
-                                <img src="/media/Advertisement/Advertisement(970X90).png" alt="Advertisement" title="Advertisement"
-                                    className="img-fluid img100" />
-                            </Link>
-                        </div>
 
-                        {/* <section>
+
+                        <section>
                             <div className="row">
                                 <div className="col-lg-9 col-sm-12 mt-4 BorderRight">
-                                    <h2 className="LatestNewsH ">{catName.CategoryName} বিভাগের সব খবর</h2>
+                                    <div className="SectionTitle">
+
+                                        <h3 className="LatestNewsH ">{catName.CategoryName} বিভাগের সব খবর</h3>
+
+                                    </div>
+
+
                                     <section className="DCatNewsListArea">
                                         <div className="row">
                                             {catNewsMore.map((nc) => {
@@ -322,12 +328,12 @@ export default function Category() {
                                         </div>
                                     </section>
                                     {showMore ?
-                                        <div id="btnDiv" className="text-center mt-4 mb-4"><button id="ajax-more-btn" className="btn btn-lg btn-block ButtonBG" onClick={toggleButtonState}>আরো পড়ুন</button></div>
+                                        <div id="btnDiv" className="text-center mt-5 mb-4"><button id="ajax-more-btn" className="btn btn-lg btn-block ButtonBG" onClick={toggleButtonState}>আরো পড়ুন</button></div>
                                         : false}
                                 </div>
-                              
+
                             </div>
-                        </section> */}
+                        </section>
 
                     </div>
 
