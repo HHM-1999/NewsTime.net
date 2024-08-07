@@ -12,9 +12,10 @@ import Home from './Components/Home';
 import SearchResult from './Components/SearchResult';
 import AllTagList from './Components/Tags/AllTagList';
 import Tagpage from './Components/Tags/TagPage';
+import VideoDetails from './Components/Video/VideoDetails';
+import VideoGallery from './Components/Video/VideoGallery';
 import AllWriters from './Components/Writers/AllWriters';
 import WritersPage from './Components/Writers/WritersPage';
-
 
 export default function MainRouterLink() {
     return (
@@ -33,6 +34,8 @@ export default function MainRouterLink() {
                 <Route path="/all_tags" element={<AllTagList />} />
                 <Route path="/writers/:WriterSlug" element={<WritersPage />} />
                 <Route path="/all_writers" element={<AllWriters />} />
+                <Route path="/video" element={<VideoGallery />} />
+                <Route path="/video/show/:vdoID" element={<VideoDetails />} />
                 <Route path="/*" element={<ErrorPage />} />
                 {/* 
                 <Route path="/aboutUs" element={<AboutUs />} />

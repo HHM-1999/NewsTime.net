@@ -1,9 +1,9 @@
-import React, { useState, useEffect } from "react";
-import axios from 'axios'
-import { Link } from 'react-router-dom'
-import DocumentTitle from 'react-document-title'
-import { scrollTop, ForLazyLoaderImg } from '../AllFunctions'
-import Ads from '../../assets/media/Advertisement/Advertisement (300X250).png'
+import axios from 'axios';
+import React, { useEffect, useState } from "react";
+import DocumentTitle from 'react-document-title';
+import { Link } from 'react-router-dom';
+import Ads from '../../assets/media/Advertisement/Advertisement (300X250).png';
+import { ForLazyLoaderImg, scrollTop } from '../AllFunctions';
 // import RLoader from "../RLoader";
 // import RLoader from "../RLoader";
 var lazyloaded = false
@@ -66,16 +66,16 @@ export default function VideoGallery() {
         <>
             <main>
                 <div className="container">
-                    <h2 className="DTitle">
+                    <h2 className="CategoryPageTitle mt-4" >
                         <Link to={+ '/'} onClick={scrollTop}>
-                            <span className="DTitleInner"><span className="DTitleInnerBar"><span>ভিডিও গ্যালারি</span></span></span>
+                            <span className="CategoryPageTitle"><span className="DTitleInnerBar"><span>ভিডিও গ্যালারি</span></span></span>
                         </Link>
-                        <DocumentTitle title='দ্য নিউজ ২৪ :: ভিডিও গ্যালারী' />
+                        <DocumentTitle title='নিউজটাইম ডটনেট :: ভিডিও গ্যালারী' />
                     </h2>
 
                     <div className="DVideoTopArea">
                         <div className="row">
-                            <div className="col-lg-8 col-12" style={{borderRight: "1px solid #e2e2e2" ,paddingRight:"20px"}}>
+                            <div className="col-lg-8 col-12" style={{ borderRight: "1px solid #e2e2e2", paddingRight: "20px" }}>
                                 <div className="DVideoTopInner">
                                     <Link to={"/video/show/" + leadVideoTop.WebTVID} onClick={scrollTop}>
                                         <div className="row">
@@ -147,8 +147,8 @@ export default function VideoGallery() {
                                                     <div className="row">
                                                         <div className="col-lg-12 col-sm-4 col-5 videoIcon">
                                                             <div className="DImgZoomBlock">
-                                                            <picture><img src={process.env.REACT_APP_LAZYL_IMG} data-src={"https://img.youtube.com/vi/" + nc.WebTVLinkCode + "/0.jpg"} alt={nc.WebTVHeading} title={nc.WebTVHeading} className="img-fluid img100" /></picture>
-                                                            <div className="card-videoGallery-icon"><i className="fa-solid fa-play"></i></div>
+                                                                <picture><img src={process.env.REACT_APP_LAZYL_IMG} data-src={"https://img.youtube.com/vi/" + nc.WebTVLinkCode + "/0.jpg"} alt={nc.WebTVHeading} title={nc.WebTVHeading} className="img-fluid img100" /></picture>
+                                                                <div className="card-videoGallery-icon"><i className="fa-solid fa-play"></i></div>
                                                             </div>
 
                                                         </div>
@@ -174,7 +174,7 @@ export default function VideoGallery() {
 
                     {/* <VideoCat1 state={videoCat} /> */}
                 </div>
-              
+
             </main>
         </>
     )
