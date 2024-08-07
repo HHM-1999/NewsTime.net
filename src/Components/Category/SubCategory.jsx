@@ -1,13 +1,13 @@
-import React, { useEffect, useState } from 'react'
-import { Link, useParams } from 'react-router-dom'
-import axios from 'axios'
+import axios from 'axios';
+import React, { useEffect, useState } from 'react';
 import DocumentTitle from "react-document-title";
-import { scrollTop, ForLazyLoaderImg } from '../AllFunctions'
+import { Link, useParams } from 'react-router-dom';
+import { ForLazyLoaderImg, scrollTop } from '../AllFunctions';
 // import LatestPopularNews from './LatestPopularNews';
 import ErrorPage from '../ErrorPage';
+import LeadLatestNews from '../HomeContent/LeadNews';
 import CategoryPopular from './CategoryPopular';
 import SubCatLdJson from './SubCatLdJson';
-import LeadLatestNews from '../HomeContent/LeadNews';
 // import RLoader from '../RLoader';
 // import RLoader from '../RLoader';
 
@@ -59,7 +59,8 @@ export default function SubCategory() {
                         .get(`${process.env.REACT_APP_API_URL}json/file/generateCategoryPopular${catID}.json`)
                         .then(({ data }) => {
                             if (data.data) {
-                            setcatLatest(data.data);}
+                                setcatLatest(data.data);
+                            }
                         });
                     axios
                         .get(`${process.env.REACT_APP_API_URL}sub-category-content/${catID}/${LeadNewsLimit}`)
@@ -134,15 +135,22 @@ export default function SubCategory() {
         <>
             {CatName ?
                 <main>
-                          
+
                     <div className="container">
-                        <h2 className="DTitle">
+                        { /* <h2 className="DTitle">
                             <Link to={+ '/'} onClick={scrollTop}>
                                 <span className="DTitleInner"><span className="DTitleInnerBar"><span>{subCatName.CategoryName}</span></span></span>
                             </Link>
                             <DocumentTitle title={`${subCatName.CategoryName} | ${subCatName.CategoryName} সর্বশেষ খবর ::  দ্য নিউজ ২৪`} />
                             <SubCatLdJson CatNames={CatName} CatNameSlug={CatSlug} SubCatNames={subCatName.CategoryName} SubCatNameSlug={subCatName.Slug} />
-                        </h2>
+                        </h2> */ }
+
+                        <div class="CategoryPageTitleTop">
+                            <h2 className="CategoryPageTitle"><Link to={+ '/'} onClick={scrollTop}><span className="CategoryPageTitle">{subCatName.CategoryName}</span></Link>
+                                <DocumentTitle title={`${subCatName.CategoryName} | ${subCatName.CategoryName} সর্বশেষ খবর :: নিউজটাইম ডটনেট`} />
+                                <SubCatLdJson CatNames={CatName} CatNameSlug={CatSlug} SubCatNames={subCatName.CategoryName} SubCatNameSlug={subCatName.Slug} />
+                            </h2>
+                        </div>
 
                         <section>
                             <div className="row">
@@ -150,7 +158,7 @@ export default function SubCategory() {
                                     <div className="row">
                                         <div className="col-lg-8 col-12 d-flex">
                                             <div className="DCatLeadTop ">
-                                                
+
                                                 {subCatLead ?
                                                     <Link to={"/" + catSlug + "/news/" + subCatLead.ContentID} onClick={scrollTop}>
                                                         <div className="row">
@@ -282,7 +290,7 @@ export default function SubCategory() {
                         </section>
 
                     </div>
-                  
+
                 </main>
                 : <ErrorPage />}
         </>

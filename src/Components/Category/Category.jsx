@@ -9,6 +9,7 @@ import DivisionDistricName from '../Country/DivisionDistricName';
 import ErrorPage from '../ErrorPage';
 import LeadLatestNews from '../HomeContent/LeadLatestNews';
 import CatLdJson from './CatLdJson';
+import CategoryPopular from './CategoryPopular';
 // import RLoader from '../RLoader';
 // import RLoader from '../RLoader';
 
@@ -330,6 +331,9 @@ export default function Category() {
                                     {showMore ?
                                         <div id="btnDiv" className="text-center mt-5 mb-4"><button id="ajax-more-btn" className="btn btn-lg btn-block ButtonBG" onClick={toggleButtonState}>আরো পড়ুন</button></div>
                                         : false}
+                                </div>
+                                <div className="col-lg-3 col-sm-12">
+                                    <CategoryPopular catLatest={catLatest} catSlug={catSlug} />
                                 </div>
 
                             </div>

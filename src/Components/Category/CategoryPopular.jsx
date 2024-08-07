@@ -8,7 +8,7 @@ export default function CategoryPopular({ catLatest, catSlug }) {
             <div className="panel panel-default">
                 <div className="panel-heading">
                     <ul className="nav nav-tabs" role="tablist">
-                        <li className="nav-item"><a className="nav-link active" data-bs-toggle="tab" role="tab"
+                        <li className="nav-item"><a className="nav-link active"
                             aria-selected="true" href="/national#tabs-1">এই বিভাগের সর্বাধিক
                             পঠিত</a></li>
                     </ul>

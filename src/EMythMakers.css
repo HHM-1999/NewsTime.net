@@ -3747,6 +3747,58 @@ span.CategoryPageTitle {
 	margin-bottom: 5px;
 }
 
+/* Category Popular */
+.MostPopularTab .nav-tabs .nav-item {
+	width: 100%;
+	border: 1px solid #001D9B;
+}
+
+.MostPopularTab .nav-tabs .nav-item .nav-link {
+	background: #fff;
+	font-weight: 600;
+	color: #000;
+	text-align: center;
+	font-size: 18px;
+}
+
+.MostPopularTab .nav-tabs {
+	margin-bottom: 20px;
+	border-bottom: 1px solid #001D9B
+}
+
+.MostPopularTab .PanelHeight {
+	max-height: 510px;
+	overflow-x: hidden;
+	border-bottom: 1px solid #fff;
+	transition: all 1s ease;
+}
+
+/* .DLatestNews {background: #eff5f4;} */
+.MostPopularTabList {
+	padding: 8px 5px;
+	border-bottom: 1px solid #e2e2e2;
+}
+
+.MostPopularTabList .col-5 {
+	padding-right: 0;
+}
+
+.MostPopularTabList picture img {
+	aspect-ratio: 1.64;
+}
+
+.MostPopularTabList .Desc {
+	padding: 0;
+}
+
+.MostPopularTabList .Desc .Title {
+	font-size: 16px;
+	line-height: 22px;
+}
+
+.MostPopularTabList:hover .Desc .Title {
+	color: #0074ed;
+}
 
 
 @media screen and (max-width:1024px) {
