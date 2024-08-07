@@ -600,7 +600,7 @@ export default function Header() {
                                                 </ul>
                                             </li>
                                             <li class="nav-item dropdown">
-                                                <a class="nav-link dropdown-toggle" href="/trade-finance" data-bs-toggle="dropdown">
+                                                <a class="nav-link dropdown-toggle" href="/trade-finance" role="button" data-bs-toggle="dropdown disable" aria-expanded="false">
                                                     অর্থ-বাণিজ্য </a>
                                                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                                                     <li><a class="dropdown-item" href="/trade-finance/economy"> অর্থনীতি </a></li>
@@ -611,7 +611,7 @@ export default function Header() {
                                             </li>
                                             {/* <li class="nav-item"><a class="nav-link" href="#">আন্তর্জাতিক</a></li> */}
                                             <li class="nav-item dropdown">
-                                                <a class="nav-link dropdown-toggle" href="/international" data-bs-toggle="dropdown">
+                                                <a class="nav-link dropdown-toggle" href="/international" role="button" data-bs-toggle="dropdown disable" aria-expanded="false">
                                                     আন্তর্জাতিক </a>
                                                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                                                     <li><a class="dropdown-item" href="/international/the-east">প্রাচ্য </a></li>
@@ -624,7 +624,7 @@ export default function Header() {
                                             </li>
 
                                             <li class="nav-item dropdown">
-                                                <a class="nav-link dropdown-toggle" href="/sports" data-bs-toggle="dropdown">
+                                                <a class="nav-link dropdown-toggle" href="/sports" role="button" data-bs-toggle="dropdown disable" aria-expanded="false">
                                                     খেলা </a>
                                                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                                                     <li><a class="dropdown-item" href="/sports/cricket">ক্রিকেট</a></li>
@@ -634,7 +634,7 @@ export default function Header() {
                                                 </ul>
                                             </li>
                                             <li class="nav-item dropdown">
-                                                <a class="nav-link dropdown-toggle" href="/entertainment" data-bs-toggle="dropdown">
+                                                <a class="nav-link dropdown-toggle" href="/entertainment" role="button" data-bs-toggle="dropdown disable" aria-expanded="false">
                                                     বিনোদন </a>
                                                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                                                     <li><a class="dropdown-item" href="/entertainment/showbiz">শোবিজ </a></li>
@@ -644,7 +644,7 @@ export default function Header() {
                                                 </ul>
                                             </li>
                                             <li class="nav-item dropdown">
-                                                <a class="nav-link dropdown-toggle" href="/education" data-bs-toggle="dropdown">
+                                                <a class="nav-link dropdown-toggle" href="/education" role="button" data-bs-toggle="dropdown disable" aria-expanded="false">
                                                     শিক্ষা</a>
                                                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                                                     <li><a class="dropdown-item" href="/education/campus">ক্যাম্পাস </a></li>
@@ -656,7 +656,7 @@ export default function Header() {
                                                 </ul>
                                             </li>
                                             <li class="nav-item dropdown">
-                                                <a class="nav-link dropdown-toggle" href="/health" data-bs-toggle="dropdown">
+                                                <a class="nav-link dropdown-toggle" href="/health" role="button" data-bs-toggle="dropdown disable" aria-expanded="false">
                                                     স্বাস্থ্য </a>
                                                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                                                     <li><a class="dropdown-item" href="/health/physical-health">শারীরিক স্বাস্থ্য</a></li>
@@ -669,7 +669,7 @@ export default function Header() {
                                                 </ul>
                                             </li>
                                             <li class="nav-item dropdown">
-                                                <a class="nav-link dropdown-toggle" href="/life" data-bs-toggle="dropdown">
+                                                <a class="nav-link dropdown-toggle" href="/life" role="button" data-bs-toggle="dropdown disable" aria-expanded="false">
                                                     জীবনযাপন </a>
                                                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                                                     <li><a class="dropdown-item" href="/life/tradition">ঐতিহ্য </a></li>
@@ -696,7 +696,7 @@ export default function Header() {
                                                 </ul>
                                             </li>
                                             <li class="nav-item dropdown">
-                                                <a class="nav-link dropdown-toggle" href="/youth" data-bs-toggle="dropdown">
+                                                <a class="nav-link dropdown-toggle" href="/youth" role="button" data-bs-toggle="dropdown disable" aria-expanded="false">
                                                     তারুণ্য </a>
                                                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                                                     <li><a class="dropdown-item" href="/youth/job-career">চাকরি-ক্যারিয়ার</a></li>
@@ -707,7 +707,7 @@ export default function Header() {
                                                 </ul>
                                             </li>
                                             <li class="nav-item dropdown">
-                                                <a class="nav-link dropdown-toggle" href="/science-and-technology" data-bs-toggle="dropdown">
+                                                <a class="nav-link dropdown-toggle" href="/science-and-technology" role="button" data-bs-toggle="dropdown disable" aria-expanded="false">
                                                     বিজ্ঞান-প্রযুক্তি</a>
                                                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                                                     <li><a class="dropdown-item" href="/science-and-technology/science">বিজ্ঞান</a></li>
@@ -722,7 +722,7 @@ export default function Header() {
                                             <li class="nav-item"><a class="nav-link" href="/factcheck">ফ্যাক্টচেক</a></li>
 
                                             <li class="nav-item dropdown">
-                                                <a class="nav-link dropdown-toggle" href="/race-gender" data-bs-toggle="dropdown">
+                                                <a class="nav-link dropdown-toggle" href="/race-gender" role="button" data-bs-toggle="dropdown disable" aria-expanded="false">
                                                     রেস-জেন্ডার </a>
                                                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                                                     <li><a class="dropdown-item" href="/race-gender/woman">নারী </a></li>

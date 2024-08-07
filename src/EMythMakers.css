@@ -3766,9 +3766,17 @@ span.CategoryPageTitle {
 	font-size: 18px;
 }
 
+.MostPopularTab .nav-tabs .nav-link {
+	margin-bottom: 0px;
+	background: 0 0;
+	border: 1px solid transparent;
+	border-top-left-radius: .25rem;
+	border-top-right-radius: .25rem;
+}
+
 .MostPopularTab .nav-tabs {
 	margin-bottom: 20px;
-	border-bottom: 1px solid #001D9B
+
 }
 
 .MostPopularTab .PanelHeight {
