@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from 'react'
 import axios from 'axios'
+import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
-import { scrollTop, ForLazyLoaderImg } from '../AllFunctions'
+import { ForLazyLoaderImg, scrollTop } from '../AllFunctions'
 
 var lazyloaded = false
 
@@ -41,7 +41,7 @@ export default function PhotoSection() {
                         <div class="row">
                             <div class="col-lg-6">
                                 <div class="video-big">
-                                    <Link to={"/" + photoStory.Slug + "/news/" + photoStory.ContentID} onClick={scrollTop}>
+                                    <Link to={"/photo-feature/news/" + photoStory.PhotoFeatureID} key={photoStory.PhotoFeatureID} onClick={scrollTop}>
                                         <div class="video-img-wrap">
                                             <div class="video-overlay"></div>
                                             <picture>
@@ -63,7 +63,7 @@ export default function PhotoSection() {
                                             return (
                                                 <div class="col-lg-6">
                                                     <div class="video-middel-items">
-                                                        <Link to={"/" + nc.Slug + "/news/" + nc.ContentID} onClick={scrollTop}>
+                                                        <Link to={"/photo-feature/news/" + nc.PhotoFeatureID} key={nc.PhotoFeatureID} onClick={scrollTop}>
                                                             <div class="video-img-wrap">
                                                                 <div class="video-overlay"></div>
                                                                 <picture>

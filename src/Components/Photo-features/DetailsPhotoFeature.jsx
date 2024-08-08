@@ -1,14 +1,14 @@
-import React, { useEffect, useState } from 'react'
-import { Link, useParams } from 'react-router-dom'
-import axios from 'axios'
-import ErrorPage from '../ErrorPage';
+import axios from 'axios';
+import { format } from 'date-fns';
+import React, { useEffect, useState } from 'react';
+import DocumentTitle from 'react-document-title';
+import { LightgalleryItem, LightgalleryProvider } from "react-lightgallery";
+import { Link, useParams } from 'react-router-dom';
 import { banglaDateConvetar, ForLazyLoaderImg, scrollTop } from '../AllFunctions';
 import DSocialShare from '../DetailsPage/DSocialShare';
+import ErrorPage from '../ErrorPage';
 import FBpagePlugin from '../FBpagePlugin';
-import { LightgalleryProvider, LightgalleryItem } from "react-lightgallery";
-import { format } from 'date-fns'
-import DocumentTitle from 'react-document-title';
-import LeadLatestNews from '../HomeContent/LeadNews';
+import LeadLatestNews from '../HomeContent/LeadLatestNews';
 // import RLoader from '../RLoader';
 // import RLoader from '../RLoader';
 
@@ -64,7 +64,7 @@ export default function DetailsPhotoFeature() {
     <>
       {contentID ?
         <main>
- 
+
           <div className="container">
             {/* <div className="LOGOIMG">
               <img src={process.env.REACT_APP_FONT_DOMAIN_URL + "media/common/logo.png"} width={187} height={68} title="TheNews24 || দ্য নিউজ ২৪"
@@ -176,8 +176,8 @@ export default function DetailsPhotoFeature() {
                 </div>
               </div>
             </section>
-          </div> 
-         
+          </div>
+
         </main >
         : <ErrorPage />}
     </>

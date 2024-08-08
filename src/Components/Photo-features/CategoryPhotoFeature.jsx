@@ -1,10 +1,10 @@
-import React, { useEffect, useState } from 'react'
-import { Link } from 'react-router-dom'
-import axios from 'axios'
+import axios from 'axios';
+import React, { useEffect, useState } from 'react';
 import DocumentTitle from "react-document-title";
-import { scrollTop, ForLazyLoaderImg } from '../AllFunctions'
+import { Link } from 'react-router-dom';
+import { ForLazyLoaderImg, scrollTop } from '../AllFunctions';
 // import LatestPopularNews from '../Category/LatestPopularNews';
-import LeadLatestNews from '../HomeContent/LeadNews';
+import LeadLatestNews from '../HomeContent/LeadLatestNews';
 // import RLoader from '../RLoader';
 // import RLoader from '../RLoader';
 
@@ -94,13 +94,13 @@ export default function CategoryPhotoFeature() {
     return (
         <>
             <main>
-      
+
                 <div className="container">
-                    <h2 className="DTitle">
+                    <h2 className="CategoryPageTitle mt-3">
                         <Link to={+ '/'} onClick={scrollTop}>
-                            <span className="DTitleInner"><span className="DTitleInnerBar"><span>ছবিঘর</span></span></span>
+                            <span className="DTitleInner"><span className="CategoryPageTitle"><span>ছবিঘর</span></span></span>
                         </Link>
-                        <DocumentTitle title="ছবিঘর | ছবিঘর সর্বশেষ খবর :: দ্য নিউজ ২৪" />
+                        <DocumentTitle title="ছবিঘর | ছবিঘর সর্বশেষ খবর :: নিউজটাইম ডটনেট" />
                     </h2>
 
                     <section>
@@ -111,11 +111,12 @@ export default function CategoryPhotoFeature() {
                                         <Link to={"/photo-feature/news/" + catLeadNews1.PhotoFeatureID} onClick={scrollTop}>
                                             <div className="DImgZoomBlock">
                                                 <picture>
-                                                    {
-                                                        catLeadNews1.ImageBgPath ==null ?
-                                                        <img src={process.env.REACT_APP_LAZYL_IMG}  width={513} height={389} alt={catLeadNews1.PhotoFeatureTitle} title={catLeadNews1.PhotoFeatureTitle} /> :
-                                                        <img src={process.env.REACT_APP_IMG_Path + catLeadNews1.ImageBgPath} width={513} height={389} alt={catLeadNews1.PhotoFeatureTitle} title={catLeadNews1.PhotoFeatureTitle} />
-                                                    }
+                                                    {/* {
+                                                        catLeadNews1.ImageBgPath === null ?
+                                                            <img src={process.env.REACT_APP_LAZYL_IMG} width={513} height={389} alt={catLeadNews1.PhotoFeatureTitle} title={catLeadNews1.PhotoFeatureTitle} /> :
+                                                            <img src={process.env.REACT_APP_IMG_Path + catLeadNews1.ImageBgPath} width={513} height={389} alt={catLeadNews1.PhotoFeatureTitle} title={catLeadNews1.PhotoFeatureTitle} />
+                                                    } */}
+                                                    <img src={process.env.REACT_APP_LAZYL_IMG} data-src={process.env.REACT_APP_IMG_Path + catLeadNews1.ImageBgPath} width={513} height={389} alt={catLeadNews1.PhotoFeatureTitle} title={catLeadNews1.PhotoFeatureTitle} />
                                                 </picture>
                                                 <div className="card-video-icon"><i className="fa-solid fa-camera"></i></div>
                                             </div>
@@ -139,11 +140,12 @@ export default function CategoryPhotoFeature() {
                                                                 <div className="col-lg-12 col-sm-3 col-5">
                                                                     <div className="DImgZoomBlock">
                                                                         <picture>
-                                                                            {
-                                                                                nc.ImageBgPath==null ?
-                                                                                <img src={process.env.REACT_APP_LAZYL_IMG}  width={353} height={198} alt={nc.PhotoFeatureTitle} title={nc.PhotoFeatureTitle} /> :
-                                                                                <img src={process.env.REACT_APP_IMG_Path + nc.ImageBgPath} width={353} height={198} alt={nc.PhotoFeatureTitle} title={nc.PhotoFeatureTitle} />
-                                                                            }
+                                                                            {/* {
+                                                                                nc.ImageBgPath == null ?
+                                                                                    <img src={process.env.REACT_APP_LAZYL_IMG} width={353} height={198} alt={nc.PhotoFeatureTitle} title={nc.PhotoFeatureTitle} /> :
+                                                                                    <img src={process.env.REACT_APP_IMG_Path + nc.ImageBgPath} width={353} height={198} alt={nc.PhotoFeatureTitle} title={nc.PhotoFeatureTitle} />
+                                                                            }*/}
+                                                                            <img src={process.env.REACT_APP_LAZYL_IMG} data-src={process.env.REACT_APP_IMG_Path + nc.ImageBgPath} width={353} height={198} alt={nc.PhotoFeatureTitle} title={nc.PhotoFeatureTitle} />
                                                                         </picture>
                                                                         <div className="card-video-icon"><i className="fa-solid fa-camera"></i></div>
                                                                     </div>
@@ -175,7 +177,10 @@ export default function CategoryPhotoFeature() {
                     <section>
                         <div className="row">
                             <div className="col-lg-9 col-sm-12 mt-4 BorderRight">
-                                <h2 className="LatestNewsH ">ছবিঘর বিভাগের সব খবর</h2>
+                                <div className="SectionTitle">
+                                    <h3 className="LatestNewsH ">ছবিঘর বিভাগের সব খবর</h3>
+                                </div>
+
                                 <section className="DCatNewsListArea">
                                     <div className="row">
                                         {catNewsMore.map((nc) => {
@@ -213,9 +218,8 @@ export default function CategoryPhotoFeature() {
                             </div>
                         </div>
                     </section>
-
                 </div>
-               
+
             </main>
         </>
     )
