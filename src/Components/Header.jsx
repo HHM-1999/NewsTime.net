@@ -536,12 +536,12 @@ export default function Header() {
                                                 <div class="social-icon">
                                                     <div class="DSocialLink">
                                                         <ul>
-                                                            <li><a href="" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                                                            <li><a href=" https://www.facebook.com/newstime.netbd/" target="_blank"><i class="fab fa-facebook-f"></i></a>
                                                             </li>
                                                             <li><a href="" target="_blank"><i class="fab fa-twitter"></i></a></li>
-                                                            <li><a href="" target="_blank"><i class="fab fa-instagram"></i></a></li>
+                                                            <li><a href="https://www.instagram.com/newstime.netbd/" target="_blank"><i class="fab fa-instagram"></i></a></li>
                                                             <li><a href="" target="_blank"><i class="fab fa-linkedin"></i></a></li>
-                                                            <li><a href="" target="_blank"><i class="fab fa-youtube"></i></a></li>
+                                                            <li><a href="https://www.youtube.com/@newstimedotnet" target="_blank"><i class="fab fa-youtube"></i></a></li>
                                                         </ul>
                                                     </div>
                                                 </div>
