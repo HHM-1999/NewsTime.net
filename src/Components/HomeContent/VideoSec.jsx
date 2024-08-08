@@ -1,11 +1,11 @@
-import React, { useState, useEffect, useRef } from 'react'
-import axios from 'axios'
-import { Link } from 'react-router-dom'
-import { scrollTop, ForLazyLoaderImg } from '../AllFunctions'
+import axios from 'axios';
+import React, { useEffect, useRef, useState } from 'react';
+import { Link } from 'react-router-dom';
+import { ForLazyLoaderImg, scrollTop } from '../AllFunctions';
 // import Slider from 'react-slick';
-import OwlCarousel from 'react-owl-carousel';
 import 'owl.carousel/dist/assets/owl.carousel.css';
 import 'owl.carousel/dist/assets/owl.theme.default.css';
+import OwlCarousel from 'react-owl-carousel';
 
 
 var lazyloaded = false
@@ -141,17 +141,20 @@ export default function VideoSec() {
                     <div class="FeaturedSlider">
                         <div class="owl-slider">
 
-                            <OwlCarousel  id="carousel" class="owl-carousel" items={4}  loop margin={10} nav>
+                            <OwlCarousel id="carousel" class="owl-carousel" items={4} loop margin={10} nav>
                                 {videos.map((nc) => {
                                     return (
                                         <div class="item" style={{ padding: "0 10px", margin: "0 10px" }}>
                                             <div class="DPhotoGalleryList">
                                                 <Link to={"/video/show/" + nc.WebTVID} onClick={scrollTop}>
                                                     <picture>
-                                                        <img src={process.env.REACT_APP_LAZYL_IMG} data-src={'https://img.youtube.com/vi/' + nc.WebTVLinkCode + '/0.jpg'} width={406} height={228} alt={nc.WebTVHeading} title={nc.WebTVHeading} className="img100 ImgRatio" />
-                                                        <div class="card-video-icon transition"></div>
+                                                        {nc.WebTVLinkCode === null ?
+                                                            <img src={process.env.REACT_APP_LAZYL_IMG} width={406} height={228} alt={nc.WebTVHeading} title={nc.WebTVHeading} className="img100 ImgRatio" /> :
+                                                            <img src={'https://img.youtube.com/vi/' + nc.WebTVLinkCode + '/0.jpg'} width={406} height={228} alt={nc.WebTVHeading} title={nc.WebTVHeading} className="img100 ImgRatio" />}
+
+                                                        <div class="card-video-icon "><i className="fa-solid fa-play"></i></div>
                                                     </picture>
-                                                    <div class="card-video-icon transition"></div>
+
                                                     <div class="Desc">
                                                         <h3 class="Title">{nc.WebTVHeading}</h3>
                                                     </div>

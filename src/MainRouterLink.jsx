@@ -9,6 +9,8 @@ import ErrorPage from './Components/ErrorPage';
 import Footer from './Components/Footer';
 import Header from './Components/Header';
 import Home from './Components/Home';
+import CategoryPhotoFeature from './Components/Photo-features/CategoryPhotoFeature';
+import DetailsPhotoFeature from './Components/Photo-features/DetailsPhotoFeature';
 import SearchResult from './Components/SearchResult';
 import AllTagList from './Components/Tags/AllTagList';
 import Tagpage from './Components/Tags/TagPage';
@@ -36,6 +38,8 @@ export default function MainRouterLink() {
                 <Route path="/all_writers" element={<AllWriters />} />
                 <Route path="/video" element={<VideoGallery />} />
                 <Route path="/video/show/:vdoID" element={<VideoDetails />} />
+                <Route path="/photo-feature" element={<CategoryPhotoFeature />} />
+                <Route path="/photo-feature/news/:photoID" element={<DetailsPhotoFeature />} />
                 <Route path="/*" element={<ErrorPage />} />
                 {/* 
                 <Route path="/aboutUs" element={<AboutUs />} />
